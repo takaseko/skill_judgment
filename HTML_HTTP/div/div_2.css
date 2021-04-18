@@ -1,0 +1,23 @@
+header {
+	background-color: #e2c100;
+}
+ 
+main {
+	background-color: #a6ae24;
+}
+ 
+footer {
+	background-color: #75c1e3;
+}
+
+/* セレクタにid名「box1」を指定して背景色を設定。
+id名の時は、先頭に#(シャープ）をつける。 */
+#box1 {
+	background-color: #ffff00;
+}
+
+/* セレクタにclass名「box2」を指定して背景色を設定。
+class名の時は、先頭に.(ドット）をつける。 */
+.box2 {
+	background-color: #a9f5f2;
+}

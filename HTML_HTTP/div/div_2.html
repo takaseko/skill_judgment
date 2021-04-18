@@ -1,0 +1,57 @@
+<!-- divタグ -->
+<!-- 自分でボックスを定義して配置したい場合は、
+ボックスにしたいコンテンツをdivタグで囲む -->
+
+<!-- id、class名について -->
+<!-- HTMLタグには、id名やclass名というタグ自体に
+  「好きな名前を付けることができる -->
+
+<!-- id名：そのページで１度だけ使える名前 -->
+<!-- class名：そのページ内で何度も使える名前 -->
+
+<!-- なぜ、id名やclass名を使うのか？
+例えば、CSSでdivタグをセレクタに指定した場合、
+HTMLファイルに記載したすべてのdivタグに適用されてしまうため -->
+<!-- 上記理由から、一部分のdivタグのみにCSSを指定したい場合などは、
+id名やclass名で固有の名前を付けて、CSSを指定する。
+レイアウトを作る時、id名やclass名は結構使うので覚えておく。 -->
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="div_2.css">
+    <title>div training</title>
+  </head>
+  <body>
+    <header>
+      <p>ヘッダー領域</p>
+    </header>
+    
+    <main>
+      <p>メイン領域</p>
+      <!-- divタグに「box1」というid名を付けて、
+        汎用ボックスにしています。-->
+      <div id="box1">
+        <p>汎用ボックス1領域</p>
+        <p>idは1ページ中に1回しか使えない</p>
+      </div>
+      <!-- divタグに「box2」というclass名をつけて、
+        汎用ボックスにしています。(複数使用:1度目) -->
+      <div class="box2">
+        <p>汎用ボックス2領域</p>
+        <p>classは1ページ中に何度でも使える</p>
+      </div>
+    </main>
+
+    <footer>
+      <!-- divタグに「box2」というclass名をつけて、
+        汎用ボックスにしています。(複数使用:2度目) -->
+      <p>フッター領域</p>
+      <div class="box2">
+        <p>汎用ボックス2領域</p>
+        <p>classは1ページ中に何度でも使える</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+/* CSSでclass名をつけた部分だけ
+デザインを適用させることができる */
+.one {
+  background-color: aqua;
+}
+
+.two {
+  color: red;
+}
+
+.three {
+  color: blue;
+}

@@ -1,0 +1,38 @@
+<!-- divとspanは -->
+<!-- divとspanはまとまりを作るために使う -->
+<!-- まとまりごとにデザインを変えることができる -->
+<!-- divとspanの違い -->
+<!-- div：ブロック要素（前後に改行の入るタグ）
+例：これは<div>例文</div>です
+これは
+例文
+です -->
+<!-- span：インライン要素（前後の改行が入らないタグ）
+例：これは<span>例文</span>です
+これは例文です -->
+<!-- spanタグは前後に改行の入らない文章の一部の文字色を変えたり、
+線を引いたりするときに便利 -->
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="div_3.css">
+    <title>div training</title>
+  </head>
+  <body>
+<!-- divタグで複数のコードを２つのまとまりに分ける。
+それぞれのclass名を”one”、”two”とする -->
+<!-- divのまとまりにclass名をつけていれば、
+その部分だけデザインを変えることができる。 -->
+      <div class="one">
+        <h1>おはよう！</h1>
+        <p>ようこそ我が家へ</p>
+      </div>
+      <div class="two">
+        <p>はじめまして！</p>
+        <p>よろしくおねがいします！</p>
+      </div>
+      <p>こちらこそ<span class="three">今後も</span>よろしくおねがいします！</p>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+.container {
+  background-color: pink;
+  width: 400px;
+  /* 下記marginを適用することで、余白部分のmarginを均等にして中央揃えにできる */
+  margin-left: auto;
+  margin-right: auto;
+}

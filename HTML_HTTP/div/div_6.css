@@ -1,0 +1,19 @@
+/* div_6.htmlでdivタグに適用させたclass属性の名前に
+CSSを割り当てていく。 */
+
+#red {
+  background-color: tomato;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.yellow {
+  background-color: yellow;
+}
+

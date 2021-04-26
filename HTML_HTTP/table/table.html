@@ -1,0 +1,36 @@
+<!-- 参照：サルワカ
+表（table）の作り方と装飾の変え方【HTML＆CSS】 -->
+
+<!-- 1.HTMLのtableの使い方 -->
+<!-- 1.1 それぞれのタグの意味 -->
+<!-- table：表全体をはさむ。<table>〜</table>の範囲が表となる。
+tr：Table Rowの略。行全体をはさむ。いくつ使ってOK。
+th：Table Headerの略。trの中で使う。はさまれた部分は見出しセルとなる。
+td：Table Dataの略。trの中で使う。はさまれた部分が表の中身のセルとなる。いくつ使ってOK。 -->
+
+<!-- 1.2 書き方 -->
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="table.css">
+    <title>TableTraining</title>
+  </head>
+  <body>
+    <table border="1">
+      <tr>
+        <th>果物</th>
+        <th>味</th>
+      </tr>
+      <tr>
+        <td>いちご</td>
+        <td>甘い</td>
+      </tr>
+      <tr>
+        <td>レモン</td>
+        <td>すっぱい</td>
+      </tr>
+    </table>
+  </body>
+</html>

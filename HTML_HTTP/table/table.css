@@ -1,0 +1,9 @@
+/* table内のthに対して、上下左右10px */
+table th {
+  padding: 10px;
+}
+
+/* table内のtdに対して、上下3px、左右10px */
+table td {
+  padding: 3px 10px;
+}

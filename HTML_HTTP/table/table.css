@@ -7,3 +7,48 @@ table th {
 table td {
   padding: 3px 10px;
 }
+
+
+/* 4.表の装飾を変える */
+/* 4.1 文字色を変える */
+/* 4.2 セルの背景色を変える */
+/* 4.3 文字を中央寄せする */
+
+table {
+  text-align: center;
+}
+
+table th {
+  color: #FF9800;
+  background-color: #fff5e5;
+}
+
+table td {
+  color: gray;
+}
+
+/* 5. 表の枠線の見た目を変える */
+/* タグ内で装飾指定をするのは後から変えたくなったときなどに面倒。
+線の設定は全てCSSでするのが良い。
+tableタグのborderは消して、CSSで指定する方法 */
+/* 5-1. 線の色や太さを指定する */
+/* thとtdに対してborderを指定します。
+1つ1つのセルの周りに線をつけているというイメージ。
+tableタグにborder属性などを書かないように */
+/* （※線と線の間に隙間ができてしまう） */
+/* 5-2. 隙間を無くして一重線にする */
+/* 一重線に変えるにはtableに対してborder-collapse: collapseと指定。
+※ border-collapseは線の間に隙間を作るかどうかを決めるCSSのプロパティ */
+/* 一重線になる。あとは線の太さを変えるなり、色を変えるなり自由にスタイリングする。 */
+/* 各セルのまわりの罫線を点線（dashed）にした */
+
+table {
+  border-collapse: collapse;
+  border: solid 2px orange; 
+  /* 表全体を線で囲う */
+}
+
+table th, table td {
+  border: dashed 1px orange;
+  /* 破線 1px オレンジ */
+}

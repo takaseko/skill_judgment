@@ -25,7 +25,7 @@ td：Table Dataの略。trの中で使う。はさまれた部分が表の中身
   <body>
 
     <!-- 見出し（th）あり -->
-    <table>
+    <table class="sample_1">
       <tr>
         <th>果物</th>
         <th>味</th>
@@ -102,7 +102,52 @@ td：Table Dataの略。trの中で使う。はさまれた部分が表の中身
         <td>りんご</td><td>甘い</td><td>赤色</td>
       </tr>
     </table>
+
     
+    <!-- 6. 複数のセルを結合する -->
+    <!-- 6.1 rowspanで縦方向につなげる
+    縦方向に並ぶ複数のセルをつなげたいときは、
+    つなげる起点となるthもしくはtdタグにrowspan="つなげるセル数"と書き込み -->
+    
+    <table>
+      <tr>
+        <th>果物</th><th>味</th><th>色</th>
+      </tr>
+      <tr>
+        <td>イチゴ</td><td rowspan="2">甘い</td><td>赤色</td>
+      </tr>
+      <tr>
+        <td>リンゴ</td><td>赤色</td>
+      </tr>
+      <tr>
+        <td>レモン</td><td>酸っぱい</td><td>黄色</td>
+      </tr>
+    </table>
+
+    <!-- 6.2 colspanで横につなげる -->
+    <!-- 横につなげたいときはcolspanを使います。
+    使い方はrowspanと全く同じでthかtdタグのどちらかに
+    colspan="つなげる数"と書き込み -->
+    
+    <table>
+      <tr>
+        <th colspan="3">果物</th>
+      </tr>
+      <tr>
+        <th>名前</th><th>特徴</th><th>色</th>
+      </tr>
+      <tr>
+        <td>イチゴ</td><td>甘い</td><td>赤色</td>
+      </tr>
+      <tr>
+        <td>リンゴ</td><td>甘い</td><td>赤色</td>
+      </tr>
+      <tr>
+        <td>レモン</td><td>酸っぱい</td><td>黄色</td>
+      </tr>
+    </table>
+
+
   </body>
 </html>
 

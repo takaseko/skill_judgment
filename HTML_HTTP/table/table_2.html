@@ -30,7 +30,6 @@ thタグ内の文字は、中央揃えされ強調して表示される。 -->
 <!-- rowspan 結合したいセルの中で一番上のセル(tdタグ)内でrowspan属性を指定 -->
 <!-- colspan 結合したいセルの中で一番左のセル(tdタグ)内でcolspan属性を指定 -->
 
-
 <!DOCTYPE html>
 <html lang="ja">
   <head>
@@ -55,5 +54,108 @@ thタグ内の文字は、中央揃えされ強調して表示される。 -->
         <td colspan="2">トリュフ</td>
       </tr>
   </table>
+
+<!-- 2.2 列、行をグループ化して色をつける -->
+<!-- ・列をグループ化するときはtableタグ内の最初にcolgroup要素を指定
+colgroupとすると列がグループ化され、styleで背景色を指定すると色が付く。
+colgroupは指定された順番に１列目、２列目という風にグループ化していく。 -->
+
+  <table border="1" cellpadding="6" cellspacing="0">
+    <caption>食べ物について</caption>
+    
+    <colgroup style="background:red">
+    </colgroup>
+      
+    <colgroup style="background:skyblue">
+    </colgroup>
+    
+    <tr>
+      <td>名前</td>
+      <td>値段</td>
+      <td>味</td>
+    </tr>   
+    <tr>
+      <td>りんご</td>
+      <td>200円</td>
+      <td>甘い</td>
+    </tr>
+  </table>
+
+  <!-- colgroupタグ内で、col span=”2″、
+  とすると２列分をまとめてグループ化する事ができる。  -->
+
+  <table border="1" cellpadding="6" cellspacing="0">
+    <caption>食べ物について</caption>
+      <colgroup>
+        <col span="2" style="background: red;">
+      </colgroup>
+    <tr>
+      <td>名前</td>
+      <td>値段</td>
+      <td>味</td>
+    </tr>
+    <tr>
+      <td>りんご</td>
+      <td>200円</td>
+      <td>甘い</td>
+    </tr>
+  </table>
+
+  <!-- 行のグループ化はthead,tbody,tfootの３要素で分ける事ができる -->
+  <!-- thead：一番上の行
+        tbody：一番上と一番下の間にある行（tbodyは複数指定出来る）
+        tfoot：一番下の行 
+      ※ tbodyは複数指定出来るので、無限にグループを作る事ができる-->
+
+  <table border="1" cellpadding="6" cellspacing="0"> 
+    <caption>食べ物</caption>
+      <thead style="background: red;">
+      <tr>
+        <th>名前</th>
+        <th>色</th>
+        <th>味</th>
+      </tr>
+      </thead>
+    
+      <tbody style="background:yellow">
+      <tr>
+        <td>りんご</td>
+        <td>赤</td>
+        <td>甘い</td>
+      </tr>
+      </tbody>
+    
+      <tfoot style="background:skyblue">
+      <tr>
+        <td>たい焼き</td>
+        <td>茶色</td>
+        <td>甘い</td>
+      </tr>
+      </tfoot>
+    </table>
+
+    <!-- tbodyの複数指定 -->
+    <table border="1" cellpadding="6" cellspacing="0">
+      <caption>食べ物</caption>
+      <tbody style="background:red">
+       <tr>
+        <th>名前</th>
+        <th>色</th>
+        <th>味</th>
+       </tr>
+      </thead>
+     
+      <tbody style="background:yellow">
+       <tr>
+        <td>りんご</td>
+        <td>赤</td>
+        <td>甘い</td>
+       </tr>
+      </tbody>
+    </table>
+
 </body>
 </html>
+
+<!-- 3. まとめ -->
+<!-- tableタグを使うとhtmlで表を簡単に作る事ができる -->

@@ -1,0 +1,72 @@
+<!-- 参照：Udemy メディア
+HTML tableタグを初心者向けに解説&便利な知識５選 -->
+
+<!-- 1. HTML tableタグの基本 -->
+<!-- 1.1 tableタグ：th要素
+表の「見出し」を作成することができる。-->
+<!-- 1.2tableタグ：tr要素
+tr要素は、表の行を定義するための要素。
+①「名前」・「背番号」
+②「前田」・「７」
+③「鈴木」・「１０」 -->
+<!-- tableタグ：td要素
+td要素は、表のデータを入れるための要素。 -->
+
+<!-- 2. HTML tableタグで表を作成 -->
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="table_3.css">
+  <title>TableTraining_3</title>
+</head>
+<body>
+  <table border="1">
+    <tr>
+      <th>日付</th><th>集合場所</th>
+    </tr>
+    <tr>
+      <td>2021/05/03</td><td>横浜</td>
+    </tr>
+    <tr>
+      <td>2021/05/04</td><td>渋谷</td>
+    </tr>
+  </table>
+
+<!-- 3. HTML tableタグ：border属性
+table borderを指定すれば、テーブルに枠線を表示させることができる。
+これはborder属性と呼ばれる。border属性に指定した数値が、テーブルの枠線の幅になる。
+border属性を指定しなければ、枠線が消える -->
+  <table>
+    <tr>
+      <th>日付</th><th>集合場所</th>
+    </tr>
+    <tr>
+      <td>2021/05/03</td><td>横浜</td>
+    </tr>
+    <tr>
+      <td>2021/05/04</td><td>渋谷</td>
+    </tr>
+  </table>
+
+<!-- 4. HTML tableタグで中央(center)寄せにする -->
+<!-- tr要素を中央寄せ（center）にするには、
+tr要素に「align=”center”」というコードを記述。
+th要素はデフォルトで中央寄せ（center）になるので、
+th要素を囲んでいるtr要素には「align=”center”」は記述しない。 -->
+
+  <table border="1">
+    <tr>
+      <th>日付</th><th>集合場所</th>
+    </tr>
+    <tr align="center">
+      <td>2021/05/03</td><td>横浜</td>
+    </tr>
+    <tr align="center">
+      <td>2021/05/04</td><td>渋谷</td>
+    </tr>
+  </table>
+
+</body>
+</html>

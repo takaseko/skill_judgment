@@ -68,5 +68,61 @@ th要素を囲んでいるtr要素には「align=”center”」は記述しな�
     </tr>
   </table>
 
+<!-- 6. HTML tableタグ：セルを結合する -->
+<!-- 6.1 横方向にセルを結合
+横方向でセルを結合するには、
+結合を適応させたいtd要素に対してcolspanという属性を指定 -->
+  <table border="1">
+    <tr>
+      <td colspan="2">国名</td>
+    </tr>
+    <tr>
+      <td>日本</td><td>カナダ</td>
+    </tr>
+  </table>
+
+<!-- 6.2 縦方向にセルを結合
+縦方向にセルを結合する場合は、
+結合を適応させたいtd要素に対してrowspanという属性を指定 -->
+  <table border="1">
+    <tr>
+      <td rowspan="2">国名</td>
+      <td>日本</td>
+    </tr>
+    <tr>
+      <td>カナダ</td>
+    </tr>
+  </table>
+
+<!-- 7. HTML tableタグ：幅を変更する -->
+<!-- HTMLで作成したテーブルの幅を変更する方法。
+テーブルの幅を変更するには、widthという属性で幅を指定 -->
+
+  <table border="1"  width="300">
+    <tr>
+      <th>日付</th><th>集合場所</th>
+    </tr>
+    <tr align="center">
+      <td>2021/05/05</td><td>横浜</td>
+    </tr>
+    <tr align="center">
+      <td>2021/05/06</td><td>渋谷</td>
+    </tr>
+  </table>
+
+<!--列ごとに幅を変更したい場合は、th要素にwidthで幅を指定 -->
+
+  <table border="1">
+    <tr>
+      <th width="300">日付</th><th width="300">集合場所</th>
+    </tr>
+    <tr align="center">
+      <td>2021/05/05</td><td>横浜</td>
+    </tr>
+    <tr align="center">
+      <td>2021/05/06</td><td>渋谷</td>
+    </tr>
+  </table>
+
 </body>
 </html>

@@ -1,0 +1,8 @@
+
+  /* 5. HTML tabeタグ：border-collapseプロパティ
+  テーブルの枠線は、特に何も指定しない限りは２重線
+  １重線にするためには、border-collapse:collapse;を指定 */
+
+  table {
+    border-collapse: collapse;
+  }

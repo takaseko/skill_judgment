@@ -1,0 +1,26 @@
+<!-- 参照：HTML Tag Board -->
+
+<!-- 1 番号付きのリストの途中から番号を変える -->
+<!-- 1.1 ol li value=""
+olタグ内のliタグに「value=””」という属性を追加すると、
+リストごとにこの開始番号を変更できる
+途中で開始番号を変更すると、以降のリストは変更された番号から順に表示される -->
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="list_4.css">
+  <title>ListTraining_4</title>
+</head>
+<body>
+  <ol>
+    <li>PC起動</li>
+    <li>コマンドライン起動</li>
+    <li value="5">本来は3番だが、value="5"で、開始番号を5へ変更</li>
+    <li>VsCode起動</li>
+    <li>文章</li>
+    <li>文章</li>
+  </ol>
+</body>
+</html>

@@ -7,15 +7,15 @@ olタグ内のliタグに「type=””」という属性を追加すると、
 リストごとに、それぞれ文章の文頭に書かれる表記の種類を変更することができる。 -->
 
 <!-- 3.1 
-type=”1”
+type="1"
 数字（1.2.3.…）
-type=”I”
+type="I"
 大文字のローマ数字（I.II.III…）
-type=”i”
+type="i"
 小文字のローマ数字（i.ii.iii…）
-type=”A”
+type="A"
 大文字の英字（A.B.C.…）
-type=”a”
+type="a"
 小文字の英字（a.b.c.） -->
 
 <!DOCTYPE html>
@@ -27,12 +27,12 @@ type=”a”
 </head>
 <body>
   <div class="container">
-    <ol type="A">
+    <ol>
       <li class="first_text">朝起きる</li>
-      <li>顔洗う</li>
-      <li>歯を磨く</li>
-      <li>コップ一杯の常温水を一気に飲む</li>
-      <li>約10分ストレッチする</li>
+      <li type="A">顔洗う</li>
+      <li type="I">歯を磨く</li>
+      <li type="i">コップ一杯の常温水を一気に飲む</li>
+      <li type="a">約10分ストレッチする</li>
       <li>朝活開始</li>
     </ol>
   </div>

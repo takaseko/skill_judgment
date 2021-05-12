@@ -1,0 +1,38 @@
+<!-- 参照：HTML Tag Board -->
+<!-- 1 番号付きのリストのマークをグループごとに変更する
+ol type=””  li
+番号付きリストで書かれた文章の文頭には、
+標準では「1.」→「2.」…のように数字が表示されますが、
+olタグに「type=””」という属性を追加すると、
+グループごと（olタグ内のliタグすべてに適用）にこの表記方法を変更することができる -->
+
+<!-- 2 記載方法
+type="1"
+数字（1.2.3.…）
+type="I"
+大文字のローマ数字（I.II.III…）
+type="i"
+小文字のローマ数字（i.ii.iii…）
+type="A"
+大文字の英字（A.B.C.…）
+type="a"
+小文字の英字（a.b.c.） -->
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="list_4_4.css">
+  <title>ListTraining_4_4</title>
+</head>
+<body>
+  <div class="container">
+    <ol type="A">
+      <li>お米3合とる</li>
+      <li>水で2回ほど洗う（洗いすぎるとお米の栄養も流れちゃうため注意）</li>
+      <li>水を炊飯器の3合ラインまで入れる</li>
+      <li class="list_text">炊飯器で白米で炊く</li>
+    </ol>
+  </div>
+</body>
+</html>

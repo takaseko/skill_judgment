@@ -1,0 +1,24 @@
+<!-- 参照：webliker web好きを生産するオウンドメディア
+【初心者向け】0からformがわかる｜HTMLでのフォーム作成 -->
+
+<!-- 1 labelを使って項目とフィールドを連動
+labelタグを使えば項目とフィールドを連動させることができる
+labelありのテキストフィールドでは「名前」をクリックすると入力欄が選択状態になる。 -->
+
+<!-- 2 記載方法
+項目名をlabelで囲む。そしてlabelにはfor="〇〇"、
+連動させたいinputにid="〇〇"と同じ名前を書く。
+こうすることで項目とフォームを連動させることができる。
+連動させることはユーザーの使いやすさの向上に繋がるので基本的にどの入力項目にもlabelは使う。 -->
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="input_1_2.css">
+  <title>InputTraining_1_2</title>
+</head>
+<body>
+  <label for="rendou">名前：</label><input type="text" name="yourname" id="rendou">
+</body>
+</html>

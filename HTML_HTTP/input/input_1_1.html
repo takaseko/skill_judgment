@@ -1,0 +1,30 @@
+<!-- 参照：webliker web好きを生産するオウンドメディア
+【初心者向け】0からformがわかる｜HTMLでのフォーム作成 -->
+
+<!-- 1 inputでテキストフィールドをつくる
+テキストフィールドは改行なしの文章などを入力するためのフォームで、
+inputタグを使用。 
+inputではtype="〇〇"に書く内容によって表示されるテキストフィールドの種類を指定。
+通常のテキスト入力欄をつくるためには、iput type="text" とする。-->
+<!-- その他にも数字専用の入力フィールドにするならinput type="number"や
+メールアドレスの入力フィールドにするならtype="email"などがある。 -->
+
+<!-- 1_1 nameの役割
+name="〇〇"は個々の入力項目を管理するid/class名のようなもの。
+半角英数字で自由につけることができるが、一般的にその入力項目に関連する内容を英訳したものが多い。
+例えば「名前」ならname="yourname"、「電話番号」ならname="tel"など
+
+name属性はその入力項目のデータをjavascriptやphpといったプログラミング言語で操作するときに使用。
+詳しい使い方は今は知らなくても「ひとまず書くもの」ということだけは覚えておく。 -->
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="input_1_1.css">
+  <title>InputTraining_1_1</title>
+</head>
+<body>
+  名前：<input type="text" name="yourname">
+</body>
+</html>

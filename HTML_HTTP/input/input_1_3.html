@@ -1,0 +1,32 @@
+<!-- 参照：webliker web好きを生産するオウンドメディア
+【初心者向け】0からformがわかる｜HTMLでのフォーム作成 -->
+
+<!-- 1 数字入力のテキストフィールド
+inputのtype属性をnumberとすることで
+半角数字しか入力できないテキストフィールドをつくることができる
+※直接数字を入力するか、数字を増減させるボタンで入力できる -->
+
+<!-- 2 メールアドレス入力のテキストフィールド
+inputのtype属性をemailにすることでメールアドレスの入力欄をつくることができる
+形式に当てはまらない場合エラー文を表示してくれる -->
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="input_1_3.css">
+  <title>InputTraining_1_3</title>
+</head>
+<body>
+  <!-- ※上記1 -->
+  <div class="num_text">
+    <label for="num">予約番号：</label>
+    <input type="number" name="yoyaku-num" id="num">
+  </div> 
+  <!-- ※上記2 -->
+  <div class="mail_text">
+    <label for="mail">メール：</label>
+    <input type="mail" name="email" id="mail">
+  </div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!-- 参照：HACK THE HACK ハック・ザ・ハック
+集客の自動化を目指す企業のためのコンテンツマーケティング情報サイト -->
+
+<!-- 1 metaタグとは？
+1_1
+metaタグとは、webサイトを記述するための言語「HTML」の記述の一つ
+metaタグはユーザーを呼び込むために使うもの
+
+HTMLでwebページを作る場合、
+「head」（ヘッド）要素と「body」（ボディ）要素の大きく２つの要素を実装する
+(1)head部：webページそのものの情報や、コンピュータ向け（ユーザーを呼び込むため）の設定情報を記述
+(2)body部：ユーザー向けのコンテンツ情報を記述（Webページの本文や画像など）
+
+検索エンジンの評価情報を集める自動巡回ロボットの「クローラー」など、
+コンピューターを介して、webページを読むかもしれないユーザーに対してmetaタグで設定された情報を伝えるため、
+metaタグの内容はwebページを閲覧中のユーザーの目に触れることはない。
+
+まとめ
+metaタグは、ユーザーを呼び込むためのwebページの設定情報を記述するタグのことを指す
+
+記載例
+<meta 〜 > -->
+
+<!-- 1_2 
+metaタグを閉じるときに注意したい半角スラッシュの有無
+metaタグの閉じ方ですが、半角スラッシュありの「/>」となしの「>」での記述がある
+
+1_2_1 
+HTMLの最新バージョン「HTML５」の場合どちらで表記しても同じ結果になる。
+head部より前に<!DOTYPE html>次の記述があれば、バージョンはHTML５ですので、特に問題はない。
+
+1_2_2
+「HTML4」の場合には、半角スラッシュなしの「>」で閉じる。
+半角スラッシュありの「/>」でmetaタグを閉じてしまうとエラーになる可能性がある。
+head部より前に<!DOCTYPE HTML PUBLIC"-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+と記述があれば、バージョンはHTML4なので注意
+
+1_2_3
+「HTMLの亜種・XHTML」の場合、半角スラッシュありの「/>」で閉じる。
+半角スラッシュなしの「>」でmetaタグを閉じるとエラーになる。
+head部より前に<?xmlversion="1.0"encoding="UTF-8"?>
+と記述があれば、バージョンは「HTMLの亜種・XHTML」なので注意 -->
+
+<!-- 1_3
+設定しても効果が得られないmetaタグもある？
+Googleはサポートしているmetaタグを公表しているため、
+Googleのmetaタグの方針についても確認しておいたほうが良い。
+※サポートされないmetaタグは無視され、設定していてもSEOの観点からはプラスにならない
+
+https://developers.google.com/search/docs/advanced/crawling/special-tags?hl=ja&visit_id=637569146970518699-3004164630&rd=1 -->
+
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="meta_seo_1.css">
+  <title>MetaSeoTraining</title>
+</head>
+<body>
+  
+</body>
+</html>

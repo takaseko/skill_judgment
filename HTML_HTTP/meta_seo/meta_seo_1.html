@@ -65,13 +65,28 @@ https://developers.google.com/search/docs/advanced/crawling/special-tags?hl=ja&v
 ・「name」の部分で名称を指定して「content」の部分で具体的な情報を設定
 ・※meta descriptionタグに入れ込むSEOキーワードをきちんと選ぶだけで、SEO対策の効果はもっと高まる -->
 
+2_3 (2)評価対象のコンテンツを取捨選択できる：noindex・nofollow
+noindexの場合
+・SEO評価の対象にしたいものと、したくないものを取捨選択するだけで、SEO対策になる。
+・ユーザーが検索したときに見せたくないwebページを検索結果に表示させない、自動巡回ロボットのクローラーの情報登録（インデックス）をさせないために「noindex」タグを使う。
+（例）SEO評価が低く質の低いwebページや、不要になったwebページは検索結果から除外したいときに使う
+nofollowの場合
+・ユーザーが自由にURLを貼ることができるようなコメント欄や掲示板などが含まれるwebサイトには、ユーザーの投稿でSEO評価が下がらないようにリンクへの評価を対象外とする「nofollow」タグを使う。
+・むやみに外部のwebページへのリンクをしてしまうと、SEO評価が下がることがある
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <!-- metaタグを使用してSEO効果を得るための実装 -->
-  <!-- 「name」の部分で名称を指定して「content」の部分で具体的な情報を設定 -->
+  <!-- "discription"の使用例
+    「name」の部分で名称を指定して「content」の部分で具体的な情報を設定 -->
   <meta name="discription" content="metaタグでSEO効果を得るための実装">
+  <!-- "noindex"の使用例
+    SEO評価が低く質の低いwebページや、不要になったwebページは検索結果から除外したいときにnoindexを使用 -->
+  <meta name="######" content="noindex">
+  <!-- "nofollow"の使用例 -->
+  <meta name="#####" content="nofollow">
   <link rel="stylesheet" href="meta_seo_1.css">
   <title>MetaSeoTraining</title>
 </head>

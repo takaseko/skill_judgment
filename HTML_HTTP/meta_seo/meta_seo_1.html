@@ -65,28 +65,78 @@ https://developers.google.com/search/docs/advanced/crawling/special-tags?hl=ja&v
 ・「name」の部分で名称を指定して「content」の部分で具体的な情報を設定
 ・※meta descriptionタグに入れ込むSEOキーワードをきちんと選ぶだけで、SEO対策の効果はもっと高まる -->
 
-2_3 (2)評価対象のコンテンツを取捨選択できる：noindex・nofollow
+<!-- 2_3 (2)評価対象のコンテンツを取捨選択できる：noindex・nofollow
 noindexの場合
 ・SEO評価の対象にしたいものと、したくないものを取捨選択するだけで、SEO対策になる。
 ・ユーザーが検索したときに見せたくないwebページを検索結果に表示させない、自動巡回ロボットのクローラーの情報登録（インデックス）をさせないために「noindex」タグを使う。
 （例）SEO評価が低く質の低いwebページや、不要になったwebページは検索結果から除外したいときに使う
 nofollowの場合
 ・ユーザーが自由にURLを貼ることができるようなコメント欄や掲示板などが含まれるwebサイトには、ユーザーの投稿でSEO評価が下がらないようにリンクへの評価を対象外とする「nofollow」タグを使う。
-・むやみに外部のwebページへのリンクをしてしまうと、SEO評価が下がることがある
+・むやみに外部のwebページへのリンクをしてしまうと、SEO評価が下がることがある -->
+
+<!-- 2_4 (3)文字化けを防ぐ：charset
+・文字コードを設定することで、コンテンツに書かれている文章が意図しない文字列で表示されてしまう「文字化け」を防ぐことができる
+・コンピューターは、日本語を英数字や記号の組み合わせで認識しているため、そのときの置き換えルールに当たるものが「文字コード」となる
+・文字コードにはさまざまな種類がありますが、webで標準的に使われているUnicode（ユニコード）の「UTF-8」がよい -->
+
+<!-- 2_5 (4)スマートデバイスに対応できる：viewport
+・「viewport」を設定することで、スマートフォンやタブレットなど、情報端末の画面サイズにあわせて表示サイズを切り替えることができる -->
+
+<!-- 2_6 (5)ソーシャルメディアに対応できる：OGP設定
+・OGP（オージーピー：Open Graph Protocol）設定とは、Facebook、Twitterなどのソーシャルメディア（SNS）で、
+シェア（共有）されたときに使われる「要約」を指定する機能
+・OGP設定していないと、シェアされたときに表示されるのはそのwebページの所在地、URLリンクの文字列だけのため、
+OGP設定をしておくことで、URLリンクと一緒に設定した情報、例えばwebページのタイトルや説明文、サムネイル画像などが表示される。
+※文字列だけよりは目を引きやすいので、情報が拡散しやすくなり、着実にSEO評価につながる。 -->
+
+<!-- 2_6_1 下記OGP設定実装例の説明
+「property」の部分で属性名を指定して「content」の部分で具体的な情報を指定
+「og:title」では、webページのタイトルを指定
+「og:type」は「website」「blog」「article」の３つのなかから選び設定しますが、
+「website」と「blog」はトップページのみに使用し、それ以外の通常のwebページは「article」を使う
+「og:description」で、webページの説明文を指定
+  ※なお、ここの設定はコンテンツの関連度を上げる対策にはならないため、descriptionタグを別途、実装する必要がある点に注意する
+「og:url」で、webページのURLを指定
+「og:site_name」で、webサイトのタイトルを指定
+「og:image」で、画像のサムネイルイメージのURLを指定 -->
+
+<!-- 3 まとめ
+metaタグは、webサイトをすでに訪問しているユーザーに対するアプローチではなく、サイトにユーザーを呼び込むための設定情報
+細かく設定するほど、あなたのwebサイトにユーザーを呼び込むことにつながる -->
 
 <!DOCTYPE html>
 <html lang="ja">
+<html prefix="og: http://あああ.いいい/ううう">
 <head>
-  <meta charset="UTF-8">
   <!-- metaタグを使用してSEO効果を得るための実装 -->
-  <!-- "discription"の使用例
+    <!-- (3)文字化けを防ぐ：charset 使用例-->
+  <meta charset="UTF-8">
+    <!-- (1)"discription"の使用例
     「name」の部分で名称を指定して「content」の部分で具体的な情報を設定 -->
   <meta name="discription" content="metaタグでSEO効果を得るための実装">
-  <!-- "noindex"の使用例
+    <!-- (2)"noindex"の使用例
     SEO評価が低く質の低いwebページや、不要になったwebページは検索結果から除外したいときにnoindexを使用 -->
   <meta name="######" content="noindex">
-  <!-- "nofollow"の使用例 -->
+    <!-- (2)"nofollow"の使用例 -->
   <meta name="#####" content="nofollow">
+    <!-- (4)スマートデバイスに対応できる：viewport 使用例-->
+  <meta name="viewport" content="width=device-width">
+  <!-- (5)ソーシャルメディアに対応できる：OGP設定 使用例 -->
+  <!-- 「property」の部分で属性名を指定して「content」の部分で具体的な情報を指定 -->
+  <!-- 「og:title」では、webページのタイトルを指定 -->
+  <meta property="og:title" content=" SEO対策とは？初心者でも理解して実践できるSEOの基礎まとめ" >
+  <!-- 「og:type」は「website」「blog」「article」の３つのなかから選び設定しますが、
+  「website」と「blog」はトップページのみに使用し、それ以外の通常のwebページは「article」を使う -->
+  <meta property="og:type" content="article">
+  <!-- 「og:description」で、webページの説明文を指定
+  ※なお、ここの設定はコンテンツの関連度を上げる対策にはならないため、descriptionタグを別途、実装する必要がある点に注意する -->
+  <meta property="og:description" content="本練習では、metaタグを使用してSEO効果を得るための実装を学びました。ぜひ、読んで実践してみてください。">
+  <!-- 「og:url」で、webページのURLを指定 -->
+  <meta property="og:url" content=" https://www.###.jp/###/">
+  <!-- 「og:site_name」で、webサイトのタイトルを指定 -->
+  <meta property="og:site_name" content="meta_seo_Skill_Up">
+  <!-- 「og:image」で、画像のサムネイルイメージのURLを指定 -->
+  <meta property="og:image" content="https://www.###.jp/###.png">
   <link rel="stylesheet" href="meta_seo_1.css">
   <title>MetaSeoTraining</title>
 </head>

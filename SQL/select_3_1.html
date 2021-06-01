@@ -1,0 +1,53 @@
+<!-- 参照：侍エンジニア塾
+【SQL】3分でSELECT文を完全マスター!データ取得の基礎から応用まで! -->
+
+<!-- 1 SELECT文とは
+「データベースから、データを取得する命令」
+
+1_1 今回例として使用するテーブル
+▼game_characterテーブル
+ID  名前	レベル	ジョブ
+ 1  スズキ	  10	   戦士
+ 2  ヤマダ     2	   魔法使い
+ 3  サトウ	   7	   勇者
+
+1_2 SELECT文の基本構文
+SELECT [取得したい要素（カラム）] FROM [使用テーブル];
+
+1_3 全キャラクターの名前を取得する場合
+SELECT name FROM game_character;
+結果：名前（スズキ〜）が取得できる
+
+1_4 複数指定する場合
+「,」で区切ることで、複数の要素（カラム）を取得可能
+SELECT name,level FROM game_character;
+結果：名前（スズキ〜）レベル（10〜）が取得できる
+
+1_5 すべて指定する場合
+取得したい要素の項目に「*」を入れる
+SELECT * FROM game_character
+結果：id（1〜）名前（スズキ〜）レベル（10〜）ジョブ（戦士〜）のすべてが取得できる
+
+2 「WHERE」で条件を絞ろう
+使い方は、SELECT文の後ろWHERE [条件文]を追加
+「level10以上のキャラクターだけ取得する」ということも可能
+SELECT [取得したい要素（カラム）] FROM [使用テーブル];
+WHERE [条件文];
+（例）level10以上のキャラクターだけ取得
+SELECT * FROM game_character; 
+WHERE 10 <= level;
+結果：id（1）名前（スズキ）レベル（10）ジョブ（戦士）のみが取得できる -->
+
+
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="select_3_1.css">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>

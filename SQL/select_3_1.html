@@ -38,6 +38,40 @@ SELECT * FROM game_character;
 WHERE 10 <= level;
 結果：id（1）名前（スズキ）レベル（10）ジョブ（戦士）のみが取得できる -->
 
+<!-- 3 ORDER BYでソート
+SELECT [取得したい要素] FROM [使用テーブル] ORDER BY [ソートしたい要素] [昇順・降順の指定(省略時昇順)];
+・ソートにはORDER BYを使用
+・[昇順・降順の指定]部分へは、asc(昇順)、desc(降順)のどちらかを指定できます。
+（※省略した場合が昇順となります。）
+（例）レベルの高い順(降順)で全データを表示する
+SELECT * FROM game_character ORDER BY level desc;
+（結果）
+id  name	level	   job
+ 1  スズキ	  10	   戦士
+ 3  サトウ	   7	   勇者
+ 2  ヤマダ     2	   魔法使い
+
+ 4 「GROUP BY」でグループわけ!
+ SELECT [取得したい要素] FROM [使用テーブル] GROUP BY [グループ化したい要素];
+ ・グループ分けをしたい場合に使用するのがGROUP BY
+ （例）職業の種類・所属人数を知りたい時
+ SELECT job, count( * ) FROM game_character GROUP BY job;
+（結果）
+ job      count(*)
+ 戦士      1
+ 勇者      1
+ 魔法使い   1
+
+ 5 「AS」で出力時に名前をつける!
+ select [要素名] AS [要素につけたい名前] from [使用テーブル];
+・表示時の各要素に名前をつけることも可能です。名前をつける場合は、要素の後ろに「AS」をつけて、その後ろに名前をつけましょう。
+（例）前の要素名を「name」から「名前」と表示
+select name AS "名前" from game_character;
+（結果）
+名前  ← nameと表示されていた部分が、指定した「名前」に変更
+スズキ
+サトウ
+ヤマダ -->
 
 
 <!DOCTYPE html>

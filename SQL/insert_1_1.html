@@ -1,0 +1,63 @@
+<!-- 参照：株式会社システムインテグレータ
+INSERT文（SQLを基本から学ぶシリーズ） -->
+
+<!-- 1 INSERT文とは
+「どのようなデータをどのテーブルに登録するか」を記述するもの
+「どのようなデータを」の部分がポイント。登録する内容は、0,1...、'a', 'あいうえお'などの固定値だけでなく、他のテーブルのデータをそのまま持ってきたり、値によってCASE文を書くこと、柔軟な記述が可能
+
+2 INSERT文の基本
+データの登録先となるテーブルの、列名を指定する方法
+例1）テーブルにデータを登録する（列名指定） 
+INSERT INTO テーブル名 (列名1, 列名2,...) VALUES (値1, 値2,...);
+・テーブル名のあとにカッコで、列名を並べる
+・列名と値は順番を合わせる必要がある
+・上記の例では、列名1は値1、列名2は値2としている
+例2）VALUESのカッコの中に確実にデータを並べることができるのなら、列名は省略可能
+INSERT INTO テーブル名 VALUES (値1, 値2,...);
+・シンプルで便利なように見えますが、思わぬトラブルが起きることがある
+・現場でも省略した形はあまり見ないとのこと
+
+3 INSERTでCASE文が使える
+例1_1）現在日付から曜日を取得する(SELECT文)
+select
+(
+  CASE dayofweek(now())
+    WHEN 1 THEN '日曜日'
+    WHEN 2 THEN '月曜日'
+    WHEN 3 THEN '火曜日'
+    WHEN 4 THEN '水曜日'
+    WHEN 5 THEN '木曜日'
+    WHEN 6 THEN '金曜日'
+    WHEN 7 THEN '土曜日'
+  END
+);
+結果：実行した日の曜日が日本語で表示されればOK
+
+例1_2） 現在日付から曜日を取得して登録する
+INSERT INTO sample(youbi)VALUES(
+  CASE dayofeweek (now())
+  WHEN 1 THEN '日曜日'
+  WHEN 2 THEN '月曜日'
+  WHEN 3 THEN '火曜日'
+  WHEN 4 THEN '水曜日'
+  WHEN 5 THEN '木曜日'
+  WHEN 6 THEN '金曜日'
+  WHEN 7 THEN '土曜日'
+END
+)
+・youbiという列に、実行した日の曜日を日本語で登録
+・CASE文の返す値をそのままINSERTしている
+・dayofweekは曜日を1（日曜日）〜7（土曜日）で返却
+・nowは現在日付を取得する関数。但し、これらはMySQL特有のものであり、お使いのDBごとに関数が異なります -->
+
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>

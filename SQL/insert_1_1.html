@@ -50,7 +50,7 @@ END
 ・dayofweekは曜日を1（日曜日）〜7（土曜日）で返却
 ・nowは現在日付を取得する関数。但し、これらはMySQL特有のものであり、お使いのDBごとに関数が異なります -->
 
-4  INSERT文の応用
+<!-- 4  INSERT文の応用
 4_1 INSERTする内容をSQLで取得（クエリ）
 ・サブクエリ（副問合せ）を使えば、SQLで取得した結果を別のテーブルにINSERTすることができます。
 例1）emp_noが10106の社員（彼の上司のemp_no は10001である）をemployeesに登録する
@@ -60,6 +60,64 @@ INSERT INTO employees (emp_no, mgr_name) VALUES (
   WHERE emp_no = '10001')
 );
 ・VALUES句にSELECT文を丸ごと入れられる。INSERTのカッコの中にある列名mgr_nameと、SELECT文の結果であるfirst_nameとlast_nameを連結したものが対比しています。
+
+4_2 
+INSERTする内容をSQLで取得
+例2）：employeesテーブルの内容を、employees2テーブルに登録（全件）
+INSERT INTO employees2 (emp_no, birth_date)
+SELECT emp_no, birth_date from employees;
+※SELECT文はWHERE等で条件指定することも可能
+
+4_3 テーブル結合した結果をINSERTする
+INSERT文は、テーブル結合をしたものを他のテーブルにINSERTすることも可能
+（INSERT文とSELECT文における結合の両方を、一度に考えるのは難しい）
+例3）：従業員の所属テーブル（dept_emp）と部署テーブル(departments)を結合
+SELECT
+de.emp_no,
+dp.dept_name
+FROM dept_emp de
+JOIN departments dp
+ON de.dept_no = dp.dept_no
+dept_empは従業員がどこに所属しているのかを保持するテーブル、departmentsは部署の情報を持つテーブルです。
+これをそのままINSERT文に書くだけ
+例4）：従業員の所属情報から従業員マスタを生成する。
+INSERT INTO employees (emp_no, dept_name)
+SELECT
+de.emp_no,
+dp.dept_name
+FROM dept_emp de
+JOIN departments dp
+※INSERT文のカッコの中と、SELECT句の中が対応している
+
+5 INSERT文のアンチパターン
+INSERT文は便利ですが、気をつけないとエラーの原因を見つけるのがむずかしくなったり、メンテナンス性が下がる場合があります。
+
+5_1 INSERTの列名を省略する
+例1）良くない例
+INSERT INTO employees2
+SELECT * FROM employees
+INSERT INTO employees2の次にカッコ（）がありません。SELECT句も＊になっていています。つまり列名を明記していません。
+実は２つのテーブル間の列名の定義がまったく同じなら、列名は省略できるのです。省略しても、内部的に全ての列名を書いたように動作します。
+一見楽に見えますが、これがエラーの原因となります。テーブルの列は、システムの仕様変更により追加や削除が行われます。ということは、列名や順番がすべて同じである前提が崩れます。INSERTのVALUES(列1, 列2, ...)と、SELECT 列1, 列2, ... の順番が合わなくなるということ。
+※この問題を防ぐために、基本的には列名を省略せずに明示的に記述するようにすること
+
+5_2 クエリを含んだINSERT文が失敗する
+例1）先に出てきたSQL
+INSERT INTO employees (emp_no, mgr_name) VALUES (
+'10106',
+(SELECT CONCAT(first_name, last_name) FROM employees
+  WHERE emp_no = '10001')
+);
+結果：上記SQLを実行すると、employeesテーブルには（10106, null）というデータが入った
+理由：SELECTの部分だけ実行してみると分かります。（10106, null）というデータが入った場合、
+SELECT CONCAT(first_name, last_name) FROM employees
+  WHERE emp_no = '10001'
+このSQLの結果が何も返ってこないため
+クエリやテーブル結合した結果を使ってINSERTする場合、まずはINSERTしたい内容、つまり上のSQL文が意図した結果を得られているかを調べる必要があります。
+「まずは最初にSELECT文を作る」のが重要。クエリやテーブル結合に失敗してINSERTができない、これはとてもよくあるエラー。もし発生したら、部分的に実行してみて問題ないか確認するとよいですね。 -->
+
+
+
 
 
 

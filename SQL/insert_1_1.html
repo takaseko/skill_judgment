@@ -50,6 +50,18 @@ END
 ・dayofweekは曜日を1（日曜日）〜7（土曜日）で返却
 ・nowは現在日付を取得する関数。但し、これらはMySQL特有のものであり、お使いのDBごとに関数が異なります -->
 
+4  INSERT文の応用
+4_1 INSERTする内容をSQLで取得（クエリ）
+・サブクエリ（副問合せ）を使えば、SQLで取得した結果を別のテーブルにINSERTすることができます。
+例1）emp_noが10106の社員（彼の上司のemp_no は10001である）をemployeesに登録する
+INSERT INTO employees (emp_no, mgr_name) VALUES (
+'10106',
+(SELECT CONCAT(first_name, last_name) FROM employees
+  WHERE emp_no = '10001')
+);
+・VALUES句にSELECT文を丸ごと入れられる。INSERTのカッコの中にある列名mgr_nameと、SELECT文の結果であるfirst_nameとlast_nameを連結したものが対比しています。
+
+
 
 <!DOCTYPE html>
 <html lang="ja">

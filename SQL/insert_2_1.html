@@ -9,8 +9,121 @@ VALUE(値a1， 値a2, ……),
 ・記載はシンプル
 「テーブル名」のテーブルにある「カラム名」のそれぞれのカラムに「値a1， 値a2, ……」の値を挿入していく -->
 
-2 INSERT文を実際に使う
+<!-- 2 INSERT文を実際に使う
+2_1 カラム名を省略したINSERTの書き方
+（例）シンプルな書き方
+INSERT INTO insert_table VALUE (1,'タロー',25);
+・INSERTは（カラム名）の指定が省略可能で、省略した場合はVALUE以下の値ですべてのカラムの値を指定する必要がある
+（結果）
+Query OK, 1 row affected (0.03 sec)
+SELECT * FROM insert_table;
++----+--------+-----+
+| id | name   | age |
++----+--------+-----+
+|  1 | タロー |  25 |
++----+--------+-----+
+1 row in set (0.00 sec)
 
+2_2 カラム名を省略しないINSERTの書き方
+（例）
+INSERT INTO insert_table (id, name) VALUE (2,'ジロー');
+・カラム名を指定した書き方では指定したカラムに合わせて値をVALUE以下に記入する必要がある
+・年齢を記入しないので、ageカラムがNULLになります。
+・カラムにNOT NULL制約をかけていた場合、INSERT自体がエラーになってしまいますので、カラムの設定をしっかり理解した上でINSERTは行うようにする
+（結果）
+Query OK, 1 row affected (0.10 sec)
+ 
+SELECT * FROM insert_table;
++----+--------+------+
+| id | name   | age  |
++----+--------+------+
+|  1 | タロー |   25 |
+|  2 | ジロー | NULL |
++----+--------+------+
+2 rows in set (0.00 sec)
+
+2_3 複数のレコードを同時に挿入する
+（例）
+INSERT INTO insert_table 
+VALUE (3,'サブロー',21), (4,'シロー',20), (5,'ゴロー',19);
+・方法はVALUE以下の（）を増やしていく
+（結果）
+Records: 3  Duplicates: 0  Warnings: 0
+ 
+SELECT * FROM insert_table;          
++----+----------+------+
+| id | name     | age  |
++----+----------+------+
+|  1 | タロー   |   25 |
+|  2 | ジロー   | NULL |
+|  3 | サブロー |   21 |
+|  4 | シロー   |   20 |
+|  5 | ゴロー   |   19 |
++----+----------+------+
+5 rows in set (0.00 sec)
+
+3 SELECT句を使った応用
+3_1 利用するのがINSERT INTO SELECT構文
+・他のテーブルにある値を別のテーブルにも記入したい場合
+NSERT INTOの句に使うことで、SELECTで選びだしたものをテーブルに挿入する
+（記入方法）
+INSERT INTO テーブル名1 (カラム名A, カラム名B, ……)
+SELECT テーブル名2.カラム名 FROM テーブル名2 WHERE 条件;
+・INSERT文のVALUE以下が丸々SELECTに置き換わったような構造
+・SELECTで指定するカラム名はどちらのテーブルを使うかを明示するため、テーブル名2.カラム名という書き方
+・テーブル名とカラム名をピリオド（.）でつなぐ書き方です（カラム名の出どころを明らかにしたいときに必要になる）
+（例）参照元となるテーブル2を作成
+CREATE TABLE insert_table2 (
+  `id` INT NOT NULL,
+  `name` VARCHAR(45) NOT NULL,
+  `age` INT,
+  PRIMARY KEY (`id`));
+ 
+INSERT INTO insert_table2 
+VALUE (1,'ハナコ',27), 
+(2,'アン',34), 
+(3,'オシン',52), 
+(4,'ジュン',25), 
+(5,'エリー',22);
+ SELECT * FROM insert_table2;
+（結果）
++----+--------+------+
+| id | name   | age  |
++----+--------+------+
+|  1 | ハナコ |   27 |
+|  2 | アン   |   34 |
+|  3 | オシン |   52 |
+|  4 | ジュン |   25 |
+|  5 | エリー |   22 |
++----+--------+------+
+5 rows in set (0.00 sec)
+上記insert_table2から、即戦力になりそうな30歳以上の人をinsert_tableに移行
+（例）記入方法
+ALTER TABLE insert_table CHANGE id id INT AUTO_INCREMENT;
+INSERT INTO insert_table (name, age)
+SELECT insert_table2.name, insert_table2.age
+FROM insert_table2
+WHERE insert_table2.age >= 30; 
+SELECT * FROM insert_table;
+（結果）
++----+----------+------+
+| id | name     | age  |
++----+----------+------+
+|  1 | タロー   |   25 |
+|  2 | ジロー   | NULL |
+|  3 | サブロー |   21 |
+|  4 | シロー   |   20 |
+|  5 | ゴロー   |   19 |
+|  6 | アン     |   34 |
+|  7 | オシン   |   52 |
++----+----------+------+
+7 rows in set (0.00 sec)
+・最初のクエリはテーブル1のidにオートインクリメントを設定（テーブルに追加する場合、idを主キーにしておくと重複や未設定の問題が生じます。それを回避するための一時しのぎ）
+・クエリの2つ目がINSERT INTO SELECT構文（テーブル1であるinsert_tableのname, ageに対して、テーブル2のname, ageカラムの情報を書き込む。ただし、ageが30以上であること、というクエリ）
+・実行結果をみると、ageが30以上のアン、オシンの二人がテーブル1に追加されているのが確認
+
+4 まとめ
+・NSERT文はSQLを構成するデータの新規追加・読み込み・変更・消去の第一歩 -->
 
 <!DOCTYPE html>
 <html lang="ja">

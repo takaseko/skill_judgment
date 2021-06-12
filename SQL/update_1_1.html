@@ -79,7 +79,35 @@ UPDATE user SET point = point * 2 WHERE name = "田中";
 |    4 | 田中   |     0 |
 +------+--------+-------+ -->
 
+<!-- 6_1  JOINを使ってデータを更新!
+・JOINとはテーブル同士を連結させる命令
+（例）point_masterテーブル:
++------+-------+
+| id   | point |
++------+-------+
+|    1 |    10 |
+|    2 |    20 |
+|    3 |    30 |
+|    4 |    40 |
++------+-------+
 
+6_2 
+（例）point_masterテーブルと、userテーブルを連携して、UPDATE
+UPDATE user
+INNER JOIN point_master ON user.id = point_master.id
+SET user.point = point_master.point;
+（結果）
++------+--------+-------+
+| id   | name   | point |
++------+--------+-------+
+|    1 | 山田   |    10 |
+|    2 | 鈴木   |    20 |
+|    3 | 加藤   |    30 |
+|    4 | 田中   |    40 |
++------+--------+-------+
+
+7 「CASE」と組み合わせて条件文も使える!
+・CASEは、SQLで条件分岐を書くことができる命令 -->
 
 <!DOCTYPE html>
 <html lang="ja">

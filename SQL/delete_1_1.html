@@ -1,0 +1,67 @@
+<!-- 参照：侍エンジニア
+【SQL】1分でわかるDELETEでのデータ削除方法!安全に削除するには?-->
+
+1 「DELETE」とは
+・「DELETE」とは「レコードの削除を行う命令」
+補足
+追加を行う「INSERT」
+更新を行う「UPDATE」
+取得を行う「SELECT」
+削除を行う「DELETE」
+
+2 「DELETE」の使い方
+（基本の書き方）
+DELETE FROM [テーブル名];
+（指定テーブルの全レコードの削除）
+
+3 「WHERE」で条件をつけよう!
+（基本の書き方）
+DELETE FROM [テーブル名] WHERE [条件];
+
+4 [補足]NULLを判定するときはIS NULL演算子
+・SQLでは条件文内部で「=」でNULLを判できない
+（IS NULL演算子の書き方）
+DELETE FROM [テーブル名] WHERE name IS NULL;
+
+5 「SELECT」と組み合わせて使ってみよう!
+（IN句を利用し、SELECTで取得した結果を元に、DELETEをかける書き方）
+DELETE FROM [テーブルA]
+WHERE
+    [要素名] IN (
+      SELECT [要素名] FROM [テーブルB] WHERE [条件]
+    );
+※削除するテーブルと、同一テーブルをSELECTすることはできないので注意
+
+6 より安全に作業するために!
+6_1 先に必ずSELECTすること
+DELETEを投げる前に同一の判定条件で、SELECTを行い、条件に問題がないか確認しましょう。
+
+6_2 確実性の高い条件をつけよう!
+（例1）userテーブルのid要素が1のユーザーデータを削除
+DELETE FROM user WHERE id="1";
+（例2）念には念をいれて、別の要素での複数の判定も合わせて入れておけばよりミスの少ない判定ができる
+例えばそのユーザーがヤマダさんだったなら、idでの判定と合わせて、一応念のため名前での判定も行っておくとミスが減らせる
+DELETE FROM user WHERE id="1" AND name="ヤマダ";
+
+7 「LIMIT」をつけておこう!
+LIMITとは：実行回数に制限をつける命令
+例えば1件しか削除されないことが確定している場合
+DELETE FROM [テーブル名] WHERE [条件文] LIMIT 1;
+※これをつけておくことで、条件文のミスで仮に全削除となってしまった場合でも、削除レコードを1つに抑えることが可能
+
+8 まとめ
+顧客のデータを削除なんてしないように、十分に気をつけてしなければならない命令
+
+
+
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>

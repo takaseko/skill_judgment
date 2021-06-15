@@ -5,6 +5,69 @@ JOINとLEFT JOINの違いをきちんと理解する -->
 ・JOINの場合、合致する右表のレコードがない場合は対応する左表のレコードが削除される（結果に出力されない）
 ・LEFT JOINの場合、合致する右表のレコードがない場合でも対応する左表のレコードが残る（結合条件のカラムはNULLの状態で出力される） -->
 
+<!-- 2_1 JOINとLEFT JOINの違い
+（例）下記テーブルがあった場合
+mysql> select id, client_id from users;
++----+-----------+
+| id | client_id |
++----+-----------+
+|  1 |      NULL |
+|  5 |      NULL |
+|  6 |      NULL |
+|  7 |      NULL |
+|  8 |      NULL |
+|  2 |         1 |
+|  9 |         1 |
+|  3 |         2 |
+|  4 |         3 |
++----+-----------+
+9 rows in set (0.02 sec)
+（id,name）
+mysql> select id, name from clients;
++----+------------+
+| id | name       |
++----+------------+
+|  1 | ?????????1 |
+|  2 | ?????????2 |
+|  3 | ?????????3 |
++----+------------+
+3 rows in set (0.00 sec)
+・usersテーブルにはclient_idをもつレコードとNULLのレコードが存在する。
+・クライアント名を参照したいなーと思った場合、clientsテーブルをjoinして結合すれば参照できるが、単純なJOINだと、以下のように「userテーブルのうちclient_idがNULLのレコード」はselectの結果から除外される。
+（INNER JOINの結果）
+mysql> select users.id, users.client_id, clients.name from users join clients on users.client_id = clients.id;
++----+-----------+------------+
+| id | client_id | name       |
++----+-----------+------------+
+|  2 |         1 | ?????????1 |
+|  9 |         1 | ?????????1 |
+|  3 |         2 | ?????????2 |
+|  4 |         3 | ?????????3 |
++----+-----------+------------+
+4 rows in set (0.00 sec)
+（対してLEFT JOINの結果）
+mysql> select users.id, users.client_id, clients.name from users left join clients on users.client_id = clients.id;
++----+-----------+------------+
+| id | client_id | name       |
++----+-----------+------------+
+|  2 |         1 | ?????????1 |
+|  9 |         1 | ?????????1 |
+|  3 |         2 | ?????????2 |
+|  4 |         3 | ?????????3 |
+|  1 |      NULL | NULL       |
+|  5 |      NULL | NULL       |
+|  6 |      NULL | NULL       |
+|  7 |      NULL | NULL       |
+|  8 |      NULL | NULL       |
++----+-----------+------------+
+9 rows in set (0.01 sec)
+・client_idがNULLのレコード（左表のレコード）も削除されない
+・結合の条件となったclient_idカラムやclientsテーブルのカラム（nameなど）はNULLとして結合され、左表のusersテーブルのレコードもそのまま残った状態で出力される。
+
+2_2 違いのまとめ
+INNER JOIN：単純に結合されたレコードのみ欲しい場合は単純なINNER JOINを使う
+LEFT JOIN：紐づくクライアントがいるかどうかで処理の出し分けをしたい場合とかはLEFT JOINを使用する -->
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>

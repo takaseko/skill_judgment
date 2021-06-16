@@ -68,6 +68,18 @@ mysql> select users.id, users.client_id, clients.name from users left join clien
 INNER JOIN：単純に結合されたレコードのみ欲しい場合は単純なINNER JOINを使う
 LEFT JOIN：紐づくクライアントがいるかどうかで処理の出し分けをしたい場合とかはLEFT JOINを使用する -->
 
+<!-- 3 LEFT JOINとRIGHT JOINの違い
+JOIN...内部結合
+LEFT JOIN...左外部結合
+RIGHT JOIN...右外部結合
+・LEFT JOINがあるならRIGHT JOINもあり、この場合右表のレコードが全て保持されるので、反対に左表のレコードがNULLのものが発生
+
+4 まとめ
+内部結合...結合相手が見つからない場合に左表のレコードが削除される
+外部結合...結合相手が見つからなくてもレコードが削除されない
+左外部結合...結合相手が見つからなくても左表のレコードが削除されない（結合条件と右表のカラムは全てNULL）
+右外部結合...結合相手が見つからなくても右表のレコードが削除されない（結合条件と左表のカラムは全てNULL） -->
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>

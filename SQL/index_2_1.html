@@ -42,6 +42,94 @@ No	name
 1_4 インデックス一言メモ
 インデックスは、データ数が多い場合に使うとよいが、データ処理速度が遅くなる可能性がある！ -->
 
+<!-- 2 インデックスの書き方・使い方
+2_1 インデックスの作成
+・インデックスを作成するには「CREATE INDEX」構文を使う
+（例）
+CREATE INDEX インデックス名 ON [ ONLY ] テーブル名 ( カラム名... )
+インデックスは、指定したテーブルのカラム名を対象に作成され、テーブルと同じスキーマ上になります。
+（インデックス用に以下テーブルを用意）
+mydb=# CREATE TABLE myschema.user(No integer, name varchar(20), age integer, address varchar(20), position varchar(20));
+CREATE TABLE
+（スキーマを作成していない人は、次のコマンドで作成）
+mydb=# CREATE INDEX ON myschema.user(name);
+CREATE INDEX
+上記でインデックスの作成は完了
+（インデックス作成結果）
+mydb=# \d myschema.user
+                       Table "myschema.user"
+  Column  |         Type          | Collation | Nullable | Default 
+----------+-----------------------+-----------+----------+---------
+ no       | integer               |           |          | 
+ name     | character varying(20) |           |          | 
+ age      | integer               |           |          | 
+ address  | character varying(20) |           |          | 
+ position | character varying(20) |           |          | 
+Indexes:
+    "user_name_idx" btree (name)
+テーブル情報の下に「Indexes」とありますね。
+これがインデックス情報
+・インデックス名が「user_name_idx」となり、対象がnameカラムであること、インデックスの種類が「btree」
+（例）複数指定したい場合は、カンマ区切りで記述
+mydb=# CREATE INDEX ON myschema.user(name, address);
+CREATE INDEX
+ 
+mydb=# \d myschema.user
+                       Table "myschema.user"
+  Column  |         Type          | Collation | Nullable | Default 
+----------+-----------------------+-----------+----------+---------
+ no       | integer               |           |          | 
+ name     | character varying(20) |           |          | 
+ age      | integer               |           |          | 
+ address  | character varying(20) |           |          | 
+ position | character varying(20) |           |          | 
+Indexes:
+    "user_name_address_idx" btree (name, address)
+    "user_name_idx" btree (name)
+複数カラムを指定したインデックスが作成
+
+2_2 インデックスの確認
+インデックスを確認するには、「¥di」コマンドを入力
+（例）
+mydb=# \di
+                 List of relations
+ Schema |     Name     | Type  |  Owner   |  Table  
+--------+--------------+-------+----------+---------
+ public | user_tb_pkey | index | postgres | user_tb
+(1 row)
+上記のように、インデックスリストが表示
+（例）作成したスキーマのインデックスリストを確認したい場合は、引数に「スキーマ名.*」を記述
+myschemaスキーマのインデックスリストを確認
+mydb=# \di myschema.*
+                      List of relations
+  Schema  |         Name          | Type  |  Owner   | Table 
+----------+-----------------------+-------+----------+-------
+ myschema | user_name_address_idx | index | postgres | user
+ myschema | user_name_idx         | index | postgres | user
+(2 rows)
+（例）
+インデックスの詳細を確認したい場合は、「¥d」コマンドを記述
+mydb=# \d myschema.user_name_idx
+           Index "myschema.user_name_idx"
+ Column |         Type          | Key? | Definition 
+--------+-----------------------+------+------------
+ name   | character varying(20) | yes  | name
+btree, for table "myschema.user"
+
+2_3 インデックスの削除
+インデックスを削除したい場合は、「DROP INDEX」構文を使う
+DROP INDEX インデックス名 
+（例）先ほど作成した「user_name_address_idx」を削除
+mydb=# DROP INDEX myschema.user_name_address_idx;
+DROP INDEX
+・実行後に「DROP INDEX」と表示されていることから削除できている
+インデックスリストを確認してみると、ちゃんと削除されてい
+mydb=# \di myschema.*
+                  List of relations
+  Schema  |     Name      | Type  |  Owner   | Table 
+----------+---------------+-------+----------+-------
+ myschema | user_name_idx | index | postgres | user
+(1 row) -->
 
 <!DOCTYPE html>
 <html lang="ja">

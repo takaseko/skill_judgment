@@ -162,132 +162,188 @@
 //     s -> s.length() // 4. Mapの値を取得するラムダ式
 // ));
 
-参照：Code Challenge
-【Java入門】List/Set/Mapの活用方法（初期化・追加addなど）
+// 参照：Code Challenge
+// 【Java入門】List/Set/Mapの活用方法（初期化・追加addなど）
 
-1 クラス図 – List Set Map –
-・List / Setインターフェースはクラスを継承している。
-・Mapはキーと値が対になったオブジェクトであるため、List / Setとは異なる。
+// 1 クラス図 – List Set Map –
+// ・List / Setインターフェースはクラスを継承している。
+// ・Mapはキーと値が対になったオブジェクトであるため、List / Setとは異なる。
 
-2 List/Set/Mapの活用方法
-・List/Set/Mapは、たくさんのデータを1つのオブジェクトとして操作することができ、データを取り出したり、追加したりすることが可能。
-・配列とは異なり、最初からサイズを決める必要がない。
-・配列と同じように複数データを扱えるListやキーと値の対になってるMapなど、用途に合わせて使い分けていくこと
+// 2 List/Set/Mapの活用方法
+// ・List/Set/Mapは、たくさんのデータを1つのオブジェクトとして操作することができ、データを取り出したり、追加したりすることが可能。
+// ・配列とは異なり、最初からサイズを決める必要がない。
+// ・配列と同じように複数データを扱えるListやキーと値の対になってるMapなど、用途に合わせて使い分けていくこと
 
-2_1 Listの活用方法
-・要素の順番を保証する（要素順番OK：0,1,2,3,4,5）
-・重複要素を許可する（重複OK：AAABCDDEみたいな）
+// 2_1 Listの活用方法
+// ・要素の順番を保証する（要素順番OK：0,1,2,3,4,5）
+// ・重複要素を許可する（重複OK：AAABCDDEみたいな）
 
-2_2 List – 実装クラス –
-・Listインターフェースを実装したクラスに【ArrayList】【LinkedList】が存在する
-ArrayList：検索は早い。要素の追加・削除は遅い。
-LinkedList：検索は遅い。要素の追加・削除は早い。
+// 2_2 List – 実装クラス –
+// ・Listインターフェースを実装したクラスに【ArrayList】【LinkedList】が存在する
+// ArrayList：検索は早い。要素の追加・削除は遅い。
+// LinkedList：検索は遅い。要素の追加・削除は早い。
 
-2_3 List – 初期化 –
-ArrayList <データ型> 変数名 = new ArrayList <データ型> ();
-LinkedList <データ型> 変数名 = new LinkedList <データ型> ();
-・点線枠で囲んだ部分（前と後ろのデータ型）は同じにする必要があるので注意
-（例：サンプルコード）
-package app.collection;
+// 2_3 List – 初期化 –
+// ArrayList <データ型> 変数名 = new ArrayList <データ型> ();
+// LinkedList <データ型> 変数名 = new LinkedList <データ型> ();
+// ・点線枠で囲んだ部分（前と後ろのデータ型）は同じにする必要があるので注意
+// （例：サンプルコード）
+// package app.collection;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
+// import java.util.ArrayList;
+// import java.util.LinkedList;
 
-public class App {
-    public static void main(String[] args) {
-        // 初期化の方法
-        ArrayList<String> arraylist = new ArrayList<String>();
-        LinkedList<String> linkedlist = new LinkedList<String>();
-    }
-}
+// public class App {
+//     public static void main(String[] args) {
+//         // 初期化の方法
+//         ArrayList<String> arraylist = new ArrayList<String>();
+//         LinkedList<String> linkedlist = new LinkedList<String>();
+//     }
+// }
 
-2_4 List – 要素追加 –
-・要素の追加は addメソッドを使用
-（例：サンプルコード）
-// 初期化の方法
-ArrayList<String> arraylist = new ArrayList<String>();
-LinkedList<String> linkedlist = new LinkedList<String>();
+// 2_4 List – 要素追加 –
+// ・要素の追加は addメソッドを使用
+// （例：サンプルコード）
+// // 初期化の方法
+// ArrayList<String> arraylist = new ArrayList<String>();
+// LinkedList<String> linkedlist = new LinkedList<String>();
 
-// ArrayListでの追加
-arraylist.add("A");
-arraylist.add("B");
-arraylist.add("C");
-System.out.println( "ArrayListの結果" + arraylist );
+// // ArrayListでの追加
+// arraylist.add("A");
+// arraylist.add("B");
+// arraylist.add("C");
+// System.out.println( "ArrayListの結果" + arraylist );
 
-// LinkedListでの追加
-linkedlist.add("A");
-linkedlist.add("B");
-linkedlist.add("C");
-System.out.println( "LinkedListの結果" + linkedlist );
-（実行結果：ArrayList, LinkedList のどちらもaddメソッドで追加できる。）
-ArrayListの結果[A, B, C]
-LinkedListの結果[A, B, C]
-（例：要素の順番を指定して、追加することも可能）
-// 初期化の方法
-ArrayList<String> arraylist = new ArrayList<String>();
-LinkedList<String> linkedlist = new LinkedList<String>();
+// // LinkedListでの追加
+// linkedlist.add("A");
+// linkedlist.add("B");
+// linkedlist.add("C");
+// System.out.println( "LinkedListの結果" + linkedlist );
+// （実行結果：ArrayList, LinkedList のどちらもaddメソッドで追加できる。）
+// ArrayListの結果[A, B, C]
+// LinkedListの結果[A, B, C]
+// （例：要素の順番を指定して、追加することも可能）
+// // 初期化の方法
+// ArrayList<String> arraylist = new ArrayList<String>();
+// LinkedList<String> linkedlist = new LinkedList<String>();
 
-// ArrayListでの追加
-arraylist.add("A");
-arraylist.add("B");
-// 追加場所を指定
-arraylist.add(1, "C");
-System.out.println( "ArrayList" + arraylist );
+// // ArrayListでの追加
+// arraylist.add("A");
+// arraylist.add("B");
+// // 追加場所を指定
+// arraylist.add(1, "C");
+// System.out.println( "ArrayList" + arraylist );
 
-// LinkedListでの追加
-linkedlist.add("A");
-linkedlist.add("B");
-// 追加場所を指定
-linkedlist.add(1, "C");
-System.out.println( "LinkedList" + linkedlist );
-（実行結果：要素【C】が【A】と【B】の間になります）
-ArrayListの結果[A, C, B]
-LinkedListの結果[A, C, B]
+// // LinkedListでの追加
+// linkedlist.add("A");
+// linkedlist.add("B");
+// // 追加場所を指定
+// linkedlist.add(1, "C");
+// System.out.println( "LinkedList" + linkedlist );
+// （実行結果：要素【C】が【A】と【B】の間になります）
+// ArrayListの結果[A, C, B]
+// LinkedListの結果[A, C, B]
 
-2_5 おまけ
-（例：【ArrayList】【LinkedList】の取得処理について計測。10万個の要素を持つ【ArrayList】【LinkedList】を１つずつ取得（検索）した場合、実行時間はどのくらい差があるのか）
-package test;
+// 2_5 おまけ
+// （例：【ArrayList】【LinkedList】の取得処理について計測。10万個の要素を持つ【ArrayList】【LinkedList】を１つずつ取得（検索）した場合、実行時間はどのくらい差があるのか）
+// package test;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+// import java.util.ArrayList;
+// import java.util.LinkedList;
+// import java.util.List;
 
-public class Sample {
-  public static void main( String args[] ) {
+// public class Sample {
+//   public static void main( String args[] ) {
 
-    int count = 100000;
-    long startTime = 0;
-    long endTime = 0;
+//     int count = 100000;
+//     long startTime = 0;
+//     long endTime = 0;
 
-    List<Integer> arraylist = new ArrayList<Integer>();
-    List<Integer> linkedlist = new LinkedList<Integer>();
+//     List<Integer> arraylist = new ArrayList<Integer>();
+//     List<Integer> linkedlist = new LinkedList<Integer>();
 
-    // 要素の追加
-    for ( int i = 0; i < count; i++ ) {
-      arraylist.add(i);
-      linkedlist.add(i);
-    }
+//     // 要素の追加
+//     for ( int i = 0; i < count; i++ ) {
+//       arraylist.add(i);
+//       linkedlist.add(i);
+//     }
 
-    // ArrayListの測定
-    startTime = System.currentTimeMillis();
-    for ( int i = 0; i < count; i++ ) {
-      arraylist.get(i);
-    }
-    endTime = System.currentTimeMillis();
-    System.out.println( "ArrayList 取得：" + (endTime - startTime) + "ミリ秒");
+//     // ArrayListの測定
+//     startTime = System.currentTimeMillis();
+//     for ( int i = 0; i < count; i++ ) {
+//       arraylist.get(i);
+//     }
+//     endTime = System.currentTimeMillis();
+//     System.out.println( "ArrayList 取得：" + (endTime - startTime) + "ミリ秒");
 
-    // LinkedListの測定
-    startTime = System.currentTimeMillis();
-    for ( int i = 0; i < count; i++ ) {
-      linkedlist.get(i);
-    }
-    endTime = System.currentTimeMillis();
-    System.out.println( "LinkedList 取得：" + (endTime - startTime) + "ミリ秒" );
+//     // LinkedListの測定
+//     startTime = System.currentTimeMillis();
+//     for ( int i = 0; i < count; i++ ) {
+//       linkedlist.get(i);
+//     }
+//     endTime = System.currentTimeMillis();
+//     System.out.println( "LinkedList 取得：" + (endTime - startTime) + "ミリ秒" );
 
-  }
-}
+//   }
+// }
+// （実行結果）
+// ArrayList 取得：1ミリ秒
+// LinkedList 取得：4045ミリ秒
+// ・ArrayListは約1ミリ秒に対して、LinkedListは4秒の処理時間
+// ・検索処理速度がArrayListが速く、LinkedListが遅いことが分かる
+
+3 Setの活用方法
+要素 A B C D E F
+・重複要素は許可しない。
+
+3_1 Set – 実装クラス –
+・Setインターフェースを実装したクラスに【HashSet】【TreeSet】が存在します。
+HashSet：要素の順番は保証しない。
+TreeSet：要素の順番はソートされる。
+
+3_2 Set – 初期化 –
+import java.util.HashSet;
+import java.util.TreeSet;
+
+HashSet<String> hashset = new HashSet<String>();
+TreeSet<String> treeset = new TreeSet<String>();
+
+3_3 Set – 要素追加 –
+要素の追加は addメソッドを使用。
+treeset.add("C");
+treeset.add("A");
+treeset.add("B");
 （実行結果）
-ArrayList 取得：1ミリ秒
-LinkedList 取得：4045ミリ秒
-・ArrayListは約1ミリ秒に対して、LinkedListは4秒の処理時間
-・検索処理速度がArrayListが速く、LinkedListが遅いことが分かる
+A,B,C
+・TreeSetの場合、ソートされて出力されていることが分かる
+
+4 Mapの活用方法
+キー id name age from
+値  100 sato 30  tokyo
+・キーと値が対になった要素
+・キーの重複は許可しない。
+
+4_1 Map – 実装クラス –
+・Mapインターフェースを実装したクラスに【HashMap】【TreeMap】が存在。
+HashMap：キーの順番は保証しない。
+TreeMap：キーの順番はソートされる。
+
+4_2 Map – 初期化 –
+import java.util.HashMap;
+import java.util.TreeMap;
+
+HashMap<Integer, String> hashmap = new HashMap<Integer, String>();
+TreeMap<Integer, String> treemap = new TreeMap<Integer, String>();
+
+4_3 Map – 要素追加 –
+・要素の追加は putメソッドを使用
+treemap.put(3, "C");
+treemap.put(1, "A");
+treemap.put(2, "B");
+（実行結果）
+1=A, 2=B, 3=C
+・TreeMapの場合、keyがソートされて出力されている
+
+5 まとめ
+java開発においてList/Set/Mapを扱う頻度はかなり高い。
+処理内容や用途に応じて使い分けることが出来れば無駄のないソースコードが書けるようになると思う

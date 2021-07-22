@@ -10,6 +10,7 @@ html_SQL_javaの技術向上
 - java 15
 
 ### html
+- divタグ
 
 
 ### SQL

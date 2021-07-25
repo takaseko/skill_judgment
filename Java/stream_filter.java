@@ -87,48 +87,89 @@
 // Yamanashi
 // for文が、すべての要素を１つずつ取り出し、条件を満たすか判定して満たすなら表示という処理となっているのに対し、Streamを用いた処理は条件を満たすものだけを集めて、集めたものをすべて表示するという処理になっています。
 
-参照：IT Sakura
-Java Stream APIでリストを操作する(stream)
+// 参照：IT Sakura
+// Java Stream APIでリストを操作する(stream)
 
-1 Stream APIとは
-・リストなどのコレクション、配列、ファイル等に使用します。
-・例：リスト等を指定してストリームを生成し、そのストリームに対して処理します。
-→Streamを生成→中間操作→終端操作
-・並列処理を行うこともできます。
-・並列で処理を行うため値が変わらない変数のみアクセス可能です。
-→外部のローカル変数に対してアクセスできるのは再代入不可のfinal変数のみです。
-→for文では外部のローカル変数にアクセスできます。
+// 1 Stream APIとは
+// ・リストなどのコレクション、配列、ファイル等に使用します。
+// ・例：リスト等を指定してストリームを生成し、そのストリームに対して処理します。
+// →Streamを生成→中間操作→終端操作
+// ・並列処理を行うこともできます。
+// ・並列で処理を行うため値が変わらない変数のみアクセス可能です。
+// →外部のローカル変数に対してアクセスできるのは再代入不可のfinal変数のみです。
+// →for文では外部のローカル変数にアクセスできます。
 
-1_1 コレクションでストリームを使用する
-コレクションではCollectionインターフェースのstreamメソッドを使用します。
-ArrayListなどのコレクションのクラスは、Collectionインターフェースを実装しているのでstreamメソッドを使用できます。
+// 1_1 コレクションでストリームを使用する
+// コレクションではCollectionインターフェースのstreamメソッドを使用します。
+// ArrayListなどのコレクションのクラスは、Collectionインターフェースを実装しているのでstreamメソッドを使用できます。
 
-2 要素の条件が１つでも一致するか(anyMatch)
-List<Integer> num1 = new ArrayList<>(Arrays.asList(5,8,9));
-  boolean a = num1.stream()
-    .anyMatch(b -> b > 10); //10より大きい要素はあるか
-  System.out.println(a); //false
-  boolean c = num1.stream()
-    .anyMatch(d -> d > 8); //8より大きい要素はあるか
-  System.out.println(c); //true
-（実行結果）要素の条件が1つでも一致した場合はtrueをそうでない場合はfalseを返します。
+// 2 要素の条件が１つでも一致するか(anyMatch)
+// List<Integer> num1 = new ArrayList<>(Arrays.asList(5,8,9));
+//   boolean a = num1.stream()
+//     .anyMatch(b -> b > 10); //10より大きい要素はあるか
+//   System.out.println(a); //false
+//   boolean c = num1.stream()
+//     .anyMatch(d -> d > 8); //8より大きい要素はあるか
+//   System.out.println(c); //true
+// （実行結果）要素の条件が1つでも一致した場合はtrueをそうでない場合はfalseを返します。
 
-3 要素の条件が全て一致するか(allMatch)
-List<Integer> num1 = new ArrayList<>(Arrays.asList(5,8,9));   
-boolean a = num1.stream()
-  .allMatch(b -> b > 7); //すべての要素は7より大きいか
-System.out.println(a); //false
-boolean c = num1.stream()
-  .allMatch(d -> d > 3); //すべての要素は3より大きいか
-System.out.println(c); //true
-（実行結果）すべての要素の条件が一致した場合はtrueをそうでない場合はfalseを返します。
+// 3 要素の条件が全て一致するか(allMatch)
+// List<Integer> num1 = new ArrayList<>(Arrays.asList(5,8,9));   
+// boolean a = num1.stream()
+//   .allMatch(b -> b > 7); //すべての要素は7より大きいか
+// System.out.println(a); //false
+// boolean c = num1.stream()
+//   .allMatch(d -> d > 3); //すべての要素は3より大きいか
+// System.out.println(c); //true
+// （実行結果）すべての要素の条件が一致した場合はtrueをそうでない場合はfalseを返します。
 
-4 要素の条件が一致するものは１つもないか(noneMatch)
-List<Integer> num1 = new ArrayList<>(Arrays.asList(5,8,9));   
-boolean a = num1.stream()
-  .noneMatch(b -> b > 7); //7より大きい要素はひとつもないか
-System.out.println(a); //false   
-boolean c = num1.stream()
-  .noneMatch(d -> d > 10); //10より大きい要素はひとつもないか
-System.out.println(c); //true
-（実行結果）noneMatchメソッドは一致が1つもない場合にtrueを返します。
+// 4 要素の条件が一致するものは１つもないか(noneMatch)
+// List<Integer> num1 = new ArrayList<>(Arrays.asList(5,8,9));   
+// boolean a = num1.stream()
+//   .noneMatch(b -> b > 7); //7より大きい要素はひとつもないか
+// System.out.println(a); //false   
+// boolean c = num1.stream()
+//   .noneMatch(d -> d > 10); //10より大きい要素はひとつもないか
+// System.out.println(c); //true
+// （実行結果）noneMatchメソッドは一致が1つもない場合にtrueを返します。
+
+// 参照：Qiita
+// Java 8 Stream API にテキストを流してみた（終端操作編）
+// URL：https://qiita.com/kumazo/items/284098c530fceb05805c
+
+1 検索する
+1_1 findFirst()/findAny()
+・メソッド名findFirst()/findAny()はそれ自体が要素を検索するわけではない。それはfilter()などの中間処理の役割
+・findFirst()は始めの要素をOptionalで返す。
+・findAny()は初めの要素をOptionalで返す。
+（Optionalは空かもしれない。）
+※findLast()的な最後の要素を得る終端操作は用意されていない。
+（例：find系終端処理の基本）
+String[] words = {"aaaaaa", "bbbbbb", "cccccc"};
+    List<String> list = Arrays.asList(words);
+    Optional<String> first = list.stream().findFirst();
+    first.ifPresent(s -> {
+        System.out.println(s);  // "aaaaaa"
+    });
+    Set<String> set = new HashSet<>(list);
+    Optional<String> any = set.stream().findAny();
+    any.ifPresent(s -> {
+        System.out.println(s);  // "cccccc"
+    });
+（例：素数を見つける ※Setの要素を１個だけ取得する）
+final int from = 1_000_000;
+    final int to = from + new Random(System.currentTimeMillis()).nextInt(from); // 揺さぶり。
+    int p = IntStream.range(from, to)
+            .parallel()
+            //.sequential() // sequencial ではどちらでも同じ結果になる。(=1000003)
+            .filter(n -> {
+                return IntStream.range(2, n)
+                        .noneMatch(m -> n % m == 0);
+            })
+            .findAny()     // prallel ではどの素数が得られるかわからない。
+            //.findFirst() // prallel でも最小の素数が得られる(=1000003)
+            .getAsInt();
+    System.out.println(p);
+・要素が得られた時点で以降の Stream 処理は打ち切られる(短絡操作)。
+・並列処理にすればfindFirst()よりもfindAny()の方が速く結果を返せる可能性がある。
+・テキスト処理では検索対象そのものより、その前後や位置の方を知りたいことも多いが、副作用や状態を持たない Stream では難しい。

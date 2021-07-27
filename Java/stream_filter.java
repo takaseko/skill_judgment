@@ -137,39 +137,39 @@
 // Java 8 Stream API にテキストを流してみた（終端操作編）
 // URL：https://qiita.com/kumazo/items/284098c530fceb05805c
 
-1 検索する
-1_1 findFirst()/findAny()
-・メソッド名findFirst()/findAny()はそれ自体が要素を検索するわけではない。それはfilter()などの中間処理の役割
-・findFirst()は始めの要素をOptionalで返す。
-・findAny()は初めの要素をOptionalで返す。
-（Optionalは空かもしれない。）
-※findLast()的な最後の要素を得る終端操作は用意されていない。
-（例：find系終端処理の基本）
-String[] words = {"aaaaaa", "bbbbbb", "cccccc"};
-    List<String> list = Arrays.asList(words);
-    Optional<String> first = list.stream().findFirst();
-    first.ifPresent(s -> {
-        System.out.println(s);  // "aaaaaa"
-    });
-    Set<String> set = new HashSet<>(list);
-    Optional<String> any = set.stream().findAny();
-    any.ifPresent(s -> {
-        System.out.println(s);  // "cccccc"
-    });
-（例：素数を見つける ※Setの要素を１個だけ取得する）
-final int from = 1_000_000;
-    final int to = from + new Random(System.currentTimeMillis()).nextInt(from); // 揺さぶり。
-    int p = IntStream.range(from, to)
-            .parallel()
-            //.sequential() // sequencial ではどちらでも同じ結果になる。(=1000003)
-            .filter(n -> {
-                return IntStream.range(2, n)
-                        .noneMatch(m -> n % m == 0);
-            })
-            .findAny()     // prallel ではどの素数が得られるかわからない。
-            //.findFirst() // prallel でも最小の素数が得られる(=1000003)
-            .getAsInt();
-    System.out.println(p);
-・要素が得られた時点で以降の Stream 処理は打ち切られる(短絡操作)。
-・並列処理にすればfindFirst()よりもfindAny()の方が速く結果を返せる可能性がある。
-・テキスト処理では検索対象そのものより、その前後や位置の方を知りたいことも多いが、副作用や状態を持たない Stream では難しい。
+// 1 検索する
+// 1_1 findFirst()/findAny()
+// ・メソッド名findFirst()/findAny()はそれ自体が要素を検索するわけではない。それはfilter()などの中間処理の役割
+// ・findFirst()は始めの要素をOptionalで返す。
+// ・findAny()は初めの要素をOptionalで返す。
+// （Optionalは空かもしれない。）
+// ※findLast()的な最後の要素を得る終端操作は用意されていない。
+// （例：find系終端処理の基本）
+// String[] words = {"aaaaaa", "bbbbbb", "cccccc"};
+//     List<String> list = Arrays.asList(words);
+//     Optional<String> first = list.stream().findFirst();
+//     first.ifPresent(s -> {
+//         System.out.println(s);  // "aaaaaa"
+//     });
+//     Set<String> set = new HashSet<>(list);
+//     Optional<String> any = set.stream().findAny();
+//     any.ifPresent(s -> {
+//         System.out.println(s);  // "cccccc"
+//     });
+// （例：素数を見つける ※Setの要素を１個だけ取得する）
+// final int from = 1_000_000;
+//     final int to = from + new Random(System.currentTimeMillis()).nextInt(from); // 揺さぶり。
+//     int p = IntStream.range(from, to)
+//             .parallel()
+//             //.sequential() // sequencial ではどちらでも同じ結果になる。(=1000003)
+//             .filter(n -> {
+//                 return IntStream.range(2, n)
+//                         .noneMatch(m -> n % m == 0);
+//             })
+//             .findAny()     // prallel ではどの素数が得られるかわからない。
+//             //.findFirst() // prallel でも最小の素数が得られる(=1000003)
+//             .getAsInt();
+//     System.out.println(p);
+// ・要素が得られた時点で以降の Stream 処理は打ち切られる(短絡操作)。
+// ・並列処理にすればfindFirst()よりもfindAny()の方が速く結果を返せる可能性がある。
+// ・テキスト処理では検索対象そのものより、その前後や位置の方を知りたいことも多いが、副作用や状態を持たない Stream では難しい。

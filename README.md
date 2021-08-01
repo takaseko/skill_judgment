@@ -1,7 +1,7 @@
 ## skill_judgment
 
 ## 内容
-html_SQL_javaの技術向上
+html_SQL_javaの技術UP
 
 ## 開発環境
 - ローカル

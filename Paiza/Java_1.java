@@ -15,12 +15,12 @@
 // ・はじめのうちは、分かるところだけ書き換える
 
 // 2_1 Chapter02 はじめてのプログラミング
-public class Java_1 {
-  public static void main(String[] args) {
-      System.out.println("Good morining");
-      System.out.println("良い天気");
-  }
-}
+// public class Java_1 {
+//   public static void main(String[] args) {
+//       System.out.println("Good morining");
+//       System.out.println("良い天気");
+//   }
+// }
 
 // 2_2 ソースコード解説
 // ・{}の下のコードは字下げしている→字下げのことをインデントと呼ぶ
@@ -32,3 +32,20 @@ public class Java_1 {
 // ・メッセージを2行表示したい場合は、System.out.println("◯◯◯");を2行記述する（優先順位は上から表示）
 // ・メッセージを日本語に変えることも可能
 // ・Javaでは表示するメッセージのことを"文字列"と呼びます（文字が繋がって列になっているため）
+
+// 3 Chapter03 間違いやすいポイント
+// public class Java_1 {
+//   public static void main(String[] args) {
+//       System.out.println("Hello world");
+//       System.out.println("Hello world");
+//   }
+// }
+// 3_1 間違えを見つけるヒント
+// ・エラー文にヒントの記述がある
+// ・ソースコード内の色が通常の色と変わっている
+// ・セミコロンを忘れている（Javaでは文の区切りを行末のセミコロン「;」で判断しているため）
+// ・セミコロンとコロンを間違える
+// ・文字列のダブルクオーテーションを忘れる「" "」
+// ・記合の間違い（{}、[]、()）など
+// ・半角、全角間違い（特にスペースは視覚的に分かりづらいので注意）
+// ・ダブルクオーテーション内では全角は使用できるが、それ以外で使えないので注意

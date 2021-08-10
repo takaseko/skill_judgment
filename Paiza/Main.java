@@ -116,3 +116,36 @@ public class Java_1 {
 ・println などの命令をあらわすキーワードは使用できない
 ・慣習として、日本語(全角)で書かない
 ・まずは、すべて小文字で変数名を付けよう */
+
+/* 8 Chapter08 文字列を受け取る
+※1行目でデータを受けとる機能をプログラムの中で簡単に扱えるようにしている
+import java.util.*;
+  public class Java_1 {
+      public static void main(String[] args) {
+          ※変数scanで、データを受けとる機能を割り当てている
+          Scanner scan = new Scanner(System.in);
+          ※scanが持っているnextという入力データを読み込むメソッドを呼びだしている
+          String text = scan.next();
+          ※入力タブの文字列データを受け取って、文字列型の変数textに代入している
+          System.out.println("Hello" + text);
+      }
+  }
+
+8_1 入力タブから文字列データを受け取る
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String text = scan.next();
+        System.out.println(text);
+    }
+}
+
+8_2 文字列同士を連結する
+public class Main {
+  public static void main(String[] args) {
+      String text = "paiza";
+      System.out.println("Hello " + text);    // Hello paiza
+  }
+} */

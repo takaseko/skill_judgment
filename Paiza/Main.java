@@ -150,44 +150,49 @@ public class Main {
   }
 } */
 
-9 Chapter09 整数を受け取る
-import java.util.*;
-public class Main {
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        String text = scan.next();
-        System.out.println(text);
-        int number = scan.nextInt();
-        System.out.println(number * 10);
-        System.out.println("おこづかい"+ number + "円");
-    }
-}
+// 9 Chapter09 整数を受け取る
+// import java.util.*;
+// public class Main {
+//     public static void main(String[] args) {
+//         Scanner scan = new Scanner(System.in);
+//         String text = scan.next();
+//         System.out.println(text);
+//         int number = scan.nextInt();
+//         System.out.println(number * 10);
+//         System.out.println("おこづかい"+ number + "円");
+//     }
+// }
 
-9_1 整数データを受け取る
-import java.util.*;
-public class Main {
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        int number = scan.nextInt();
-        System.out.println(number);    // 120 -> 120
-    }
-}
+// 9_1 整数データを受け取る
+// import java.util.*;
+// public class Main {
+//     public static void main(String[] args) {
+//         Scanner scan = new Scanner(System.in);
+//         int number = scan.nextInt();
+//         System.out.println(number);    // 120 -> 120
+//     }
+// }
 
-9_2 受け取っったデータで計算する
-import java.util.*;
-public class Main {
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        int number = scan.nextInt();
-        System.out.println(number * 10);    // 120 -> 1200
-    }
-}
+// 9_2 受け取っったデータで計算する
+// import java.util.*;
+// public class Main {
+//     public static void main(String[] args) {
+//         Scanner scan = new Scanner(System.in);
+//         int number = scan.nextInt();
+//         System.out.println(number * 10);    // 120 -> 1200
+//     }
+// }
 
-9_3 文字列と整数データを連結する
-・文字列と整数をプラス記号で結ぶと、整数データを文字列に自動的に変換してから、連結する。
-public class Main {
-  public static void main(String[] args) {
-      int number = 120;
-      System.out.println("おこづかい" + number + "円");    // おこづかい：120円
-  }
-}
+// 9_3 文字列と整数データを連結する
+// ・文字列と整数をプラス記号で結ぶと、整数データを文字列に自動的に変換してから、連結する。
+// public class Main {
+//   public static void main(String[] args) {
+//       int number = 120;
+//       System.out.println("おこづかい" + number + "円");    // おこづかい：120円
+//   }
+// }
+
+/* 10 Chapter10 標準入力と標準出力
+・標準入力と標準出力は、多くの OS やプログラム実行環境が持っている機能
+・プログラムは、標準入力からデータを受け取って、標準出力にデータを渡します。
+・標準入力と標準出力は、この受け渡し先をプログラムの実行時に指定できる */

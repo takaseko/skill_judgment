@@ -196,3 +196,48 @@ public class Main {
 ・標準入力と標準出力は、多くの OS やプログラム実行環境が持っている機能
 ・プログラムは、標準入力からデータを受け取って、標準出力にデータを渡します。
 ・標準入力と標準出力は、この受け渡し先をプログラムの実行時に指定できる */
+
+/* 11 Chapter11 条件に一致したら処理を実行する
+import java.util.*;
+public class Java_1 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int number = scan.nextInt();
+        System.out.println(number);
+        if (number == 10){
+            System.out.println("Welcome");
+        }
+    }
+}
+
+11_1 ポイント
+・条件を表す「==」のような記号のことを「関係演算子」と呼びます
+
+11_2 ifの基本形
+・受け取った整数データが 10 だったら、Welcome と表示します。
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int number = scan.nextInt();
+        System.out.println(number);
+
+        if (number == 10) {
+            System.out.println("Welcome");
+        }
+    }
+}
+
+11_3 等しいか等しくないか判定
+文字列・数値が一致しているか判定する関係演算子
+==  等しい。代入と区別する    a == b
+!=  等しくない  a != b
+
+11_4 数値の大小を比較する
+・数値を大小を判定するる関係演算子
+> 大なり    a > b   aはbより大きい。範囲にbを含まない
+< 小なり    a < b   aはbより小さい。範囲にbを含まない
+>= 以上     a >= b  aはb以上。範囲にbを含める
+<= 以下     a <= b  aはb以下。範囲にbを含める
+18歳より大きい：    18歳は含まれない
+18歳以上：    18歳も含まれる */

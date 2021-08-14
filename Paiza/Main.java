@@ -241,3 +241,57 @@ public class Main {
 <= 以下     a <= b  aはb以下。範囲にbを含める
 18歳より大きい：    18歳は含まれない
 18歳以上：    18歳も含まれる */
+
+/* 12 Chapter12 条件に合わせて処理を変える
+・if を使って、さらに複雑な処理をおこないます。
+・if のコードに、条件が成立しなかった場合のコードを追加。
+・複数の条件を追加
+import java.util.*;
+public class Java_1 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int number = scan.nextInt();
+        System.out.println(number);
+        if (number == 10) {
+            System.out.println("Welcome");
+        } else if (number > 10) {
+          System.out.println("Good morning");
+        } else {
+          System.out.println("Goodbye");
+        }
+    }
+}
+
+12_1 elseの基本形
+・条件が成立しなかった場合に、「Goodbye」と表示します
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int number = scan.nextInt();
+        System.out.println(number);
+        if (number == 10) {
+            System.out.println("Welcome");
+        } else {
+            System.out.println("Goodbye");
+        }
+    }
+}
+
+12_2 else if を追加する
+・さらに、変数 number が 10 より大きい場合、「Good morning」と表示します
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int number = scan.nextInt();
+        System.out.println(number);
+        if (number == 10) {
+            System.out.println("Welcome");
+        } else if (number > 10) {
+            System.out.println("Good morning");
+        } else {
+            System.out.println("Goodbye");
+        }
+    }
+} */

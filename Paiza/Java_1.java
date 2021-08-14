@@ -296,3 +296,37 @@ public class Main {
     }
 } */ 
 
+/* 13 Chapter13 文字列の一致を判定する
+・受け取った文字データが、指定の文字列と一致しているかどうか、if で判定するプログラムを作成。
+・文字列を条件にするときは、equals メソッドを使います。
+
+13_1 文字列が一致しているか判定する
+・受け取った文字列が Java だったら、Welcome と表示する
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String name = scan.next();
+        System.out.println("Hello " + name);
+        if (name.equals("Java")) {
+            System.out.println("Welcome");
+        }
+    }
+}
+
+13_2 else ifとelseを追加する
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String name = scan.next();
+        System.out.println("Hello " + name);
+        if (name.equals("Java")) {
+            System.out.println("Welcome");
+        } else if (name.equals("JAVA")) {
+            System.out.println("Good morning");
+        } else {
+            System.out.println("Goodbye");
+        }
+    }
+} */

@@ -276,7 +276,6 @@ public class Main {
             System.out.println("Goodbye");
         }
     }
-}
 
 12_2 else if を追加する
 ・さらに、変数 number が 10 より大きい場合、「Good morning」と表示します
@@ -294,6 +293,7 @@ public class Main {
             System.out.println("Goodbye");
         }
     }
+<<<<<<< HEAD:Paiza/Java_1.java
 } */ 
 
 /* 13 Chapter13 文字列の一致を判定する

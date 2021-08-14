@@ -1,7 +1,7 @@
 ## skill_judgment
 
 ## 内容
-html_SQL_javaの技術UP
+html_SQL_javaの技術向上
 
 ## 開発環境
 - ローカル
@@ -38,3 +38,6 @@ html_SQL_javaの技術UP
 - 値渡し、参照渡しの違いを理解
 - Streamが一通り利用できる（fileter, anyMatch , findFirestなど）
 - O/R マッパーを利用してのコーディングができる（MyBatis, hibernateなど）
+
+### Paiza
+- Java

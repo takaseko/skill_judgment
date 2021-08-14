@@ -244,8 +244,23 @@ public class Main {
 
 /* 12 Chapter12 条件に合わせて処理を変える
 ・if を使って、さらに複雑な処理をおこないます。
-・まずは、if のコードに、条件が成立しなかった場合のコードを追加します。
-・それから、複数の条件を追加します。
+・if のコードに、条件が成立しなかった場合のコードを追加。
+・複数の条件を追加
+import java.util.*;
+public class Java_1 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int number = scan.nextInt();
+        System.out.println(number);
+        if (number == 10) {
+            System.out.println("Welcome");
+        } else if (number > 10) {
+          System.out.println("Good morning");
+        } else {
+          System.out.println("Goodbye");
+        }
+    }
+}
 
 12_1 elseの基本形
 ・条件が成立しなかった場合に、「Goodbye」と表示します
@@ -262,7 +277,7 @@ public class Main {
         }
     }
 
-12_2 else ifを追加する
+12_2 else if を追加する
 ・さらに、変数 number が 10 より大きい場合、「Good morning」と表示します
 import java.util.*;
 public class Main {

@@ -40,4 +40,4 @@ html_SQL_javaの技術向上
 - O/R マッパーを利用してのコーディングができる（MyBatis, hibernateなど）
 
 ### Paiza
-- Java
+- Java1

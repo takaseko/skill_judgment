@@ -366,7 +366,7 @@ public class Main {
     }
 } */
 
-15 Chapter15 複数のデータを受け取る
+/* 15 Chapter15 複数のデータを受け取る
 ・ループ処理で、複数のデータを受け取る方法。
 ループ処理で Scanner オブジェクトを使うと、標準入力から複数のデータを受け取ることができます。
 
@@ -395,4 +395,59 @@ public class Main {
             System.out.println("Hello " + name);
         }
     }
+} */
+
+/* 16 Chapter16 複数のデータを分類する
+演習課題1
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int count = scan.nextInt();
+        System.out.println(count);
+        for (int i = 0; i < count; i++) {
+            int number = scan.nextInt();
+            if (number == 0) {
+                System.out.println(number + "は0");
+            } else if (number > 0) {
+                System.out.println(number + "はプラス");
+            } else {
+                System.out.println(number + "はマイナス");
+            }
+        }
+    }
 }
+
+16_1 複数の整数データを受け取る
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int count = scan.nextInt();
+        for (int i = 0; i < count; i++) {
+            int number = scan.nextInt();
+            System.out.println(number);
+        }
+      }
+}
+
+
+16_2 複数の整数データを受け取って分類する
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int count = scan.nextInt();
+        for (int i = 0; i < count; i++) {
+            int number = scan.nextInt();
+            System.out.println(number);
+            if (number == 10) {
+                System.out.println(number + "は10に等しい");
+            } else if (number > 10) {
+                System.out.println(number + "は10より大きい");
+            } else {
+                System.out.println(number + "は10未満");
+            }
+        }
+    }
+} */

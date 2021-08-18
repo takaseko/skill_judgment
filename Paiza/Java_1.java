@@ -331,7 +331,7 @@ public class Main {
     }
 } */
 
-14 Chapter14 同じ処理を何度も繰り返す
+/* 14 Chapter14 同じ処理を何度も繰り返す
 public class Java_1 {
     public static void main(String[] args) {
         String greeting = "Hello paiza";
@@ -362,6 +362,37 @@ public class Main {
 
         for (int i = 0; i < 5; i++) {
             System.out.println(greeting + ":" + i);
+        }
+    }
+} */
+
+15 Chapter15 複数のデータを受け取る
+・ループ処理で、複数のデータを受け取る方法。
+ループ処理で Scanner オブジェクトを使うと、標準入力から複数のデータを受け取ることができます。
+
+15_1 繰り返し回数を受け取る
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int count = scan.nextInt();
+        System.out.println(count);
+        for (int i = 0; i < count; i++) {
+            System.out.println("Hello paiza");
+        }
+    }
+}
+
+15_2 複数のデータを受け取る
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int count = scan.nextInt();
+        System.out.println(count);
+        for (int i = 0; i < count; i++) {
+            String name = scan.next();
+            System.out.println("Hello " + name);
         }
     }
 }

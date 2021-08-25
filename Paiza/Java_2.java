@@ -21,3 +21,17 @@ public class Java_2 {
 Javaでは、この「println」のような命令を「メソッド」と呼んでいます。
 プログラミングでは、「println」のようなメソッドで、コンピュータに対して動作を指示していきます。「println」と書くと、文字を表示するのだなとJavaが理解して、そのとおり動いてくれるのです。
 プログラミング言語は、このようなメソッドをたくさん持っています。各メソッドがどのように動作をするか、プログラミング言語ごとに決まっています。*/
+
+3 Chapter03_コメントでプログラムを見やすく！
+// コメントを入力する
+public class Main { //メインクラス
+	public static void main(String[] args) {
+		System.out.println("hello world1");//文字を表示
+		/*System.out.println("hello world2");
+		System.out.println("hello world3");*/
+	}
+}
+
+3_1 コメントアウトの方法
+・Javaでは、「//」から行末までがコメントになる
+・複数の行をコメントアウトするときは、コメント行の先頭に「/*」を、末尾に「*/」を記述 */

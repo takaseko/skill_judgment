@@ -22,16 +22,30 @@ Javaでは、この「println」のような命令を「メソッド」と呼ん
 プログラミングでは、「println」のようなメソッドで、コンピュータに対して動作を指示していきます。「println」と書くと、文字を表示するのだなとJavaが理解して、そのとおり動いてくれるのです。
 プログラミング言語は、このようなメソッドをたくさん持っています。各メソッドがどのように動作をするか、プログラミング言語ごとに決まっています。*/
 
-3 Chapter03_コメントでプログラムを見やすく！
-// コメントを入力する
-public class Main { //メインクラス
-	public static void main(String[] args) {
-		System.out.println("hello world1");//文字を表示
-		/*System.out.println("hello world2");
-		System.out.println("hello world3");*/
-	}
-}
+// 3 Chapter03_コメントでプログラムを見やすく！
+// // コメントを入力する
+// public class Main { //メインクラス
+// 	public static void main(String[] args) {
+// 		System.out.println("hello world1");//文字を表示
+// 		/*System.out.println("hello world2");
+// 		System.out.println("hello world3");*/
+// 	}
+// }
 
-3_1 コメントアウトの方法
-・Javaでは、「//」から行末までがコメントになる
-・複数の行をコメントアウトするときは、コメント行の先頭に「/*」を、末尾に「*/」を記述 */
+// 3_1 コメントアウトの方法
+// ・Javaでは、「//」から行末までがコメントになる
+// ・複数の行をコメントアウトするときは、コメント行の先頭に「/*」を、末尾に「*/」を記述 */
+
+/*4 Chapter04_HTMLを表示してみよう 
+4_1 文字データの呼び方
+・プログラムでは、文字データのことを「テキスト」「文字列」(もじれつ)「String」(ストリング/ストリングス)と呼ぶことがある
+
+4_2 
+// HTMLを表示する
+public class Main {
+	public static void main(String[] args) {
+			System.out.print("<h1>hello world</h1>");
+			System.out.print("<p>世界の皆さん、");
+			System.out.print("<b>こんにちは</b></p>");
+	}
+}*/

@@ -50,8 +50,8 @@ public class Main {
 	}
 }*/
 
-4 Chapter05_変数を使えるようになろう
-/* 変数を使う
+/*5 Chapter05_変数を使えるようになろう
+ 変数を使う
 public class Main {
 	public static void main(String[] args) {
 	    String player = "勇者";
@@ -84,3 +84,43 @@ int number = 3; // 整数データの変数
 
 player = "戦士"
 print(player + "は、荒野を歩いていた")*/
+
+6 Chapter06_サイコロを作ろう
+// 数の表示とサイコロ
+public class Main {
+	public static void main(String[] args) {
+		double rand = Math.random() * 100 + 1;
+		//System.out.println(rand);
+		int number = (int)rand;
+		//System.out.println(number);
+		System.out.println("スライムが" + number + "匹あらわれた");
+	}
+}
+
+/* 6_1 メソッドとは
+メソッドとは、Javaが持つ特別な機能を呼び出す方法です。
+prinlnメソッドやrandomメソッドのように、便利なメソッドが多数用意されています。
+メソッドの例：
+・System.out.println(data) ：指定したデータを出力する（改行あり）
+・System.out.print(data) ：指定したデータを出力する（改行なし）
+・Math.random() ：0から1までのランダムな数値を出力する
+
+6_2 double型とは
+double型は、小数点以下の数値を扱うことのできるデータ型です。
+int型と同様に、多くの場面で使用されています。
+
+6_3 型変換とは
+型変換はキャストとも呼ばれる、プログラミングにおけるテクニックの一つで、
+例えばdouble型のデータをint型のデータにするときに使われます。
+double型のデータをint型のデータにする際には小数点以下が切り捨てられます。
+型変換の例：
+(int)60.5 ：60.5というdouble型の値を、60というint型の値として取り出す。
+
+6_4 引数とは
+メソッドの引数(ひきすう)とは、メソッドに与えるデータです。引数は、メソッドに続くカッコの中に記述します。複数の引数がある場合は、「,」(コンマ)で区切ります。
+引数の例：
+System.out.println(data) ：dataを引き数として出力する（改行あり）
+
+6_5 戻り値とは
+メソッドの戻り値(もどりち)とは、メソッドの処理結果のデータのことです。返り値と呼ぶ場合もあります。
+Math.random()というメソッドを呼び出すと、0から1の間のランダムな数値が戻り値となります。*/

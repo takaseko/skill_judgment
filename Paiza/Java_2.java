@@ -85,7 +85,7 @@ int number = 3; // 整数データの変数
 player = "戦士"
 print(player + "は、荒野を歩いていた")*/
 
-6 Chapter06_サイコロを作ろう
+/*6 Chapter06_サイコロを作ろう
 // 数の表示とサイコロ
 public class Main {
 	public static void main(String[] args) {
@@ -97,7 +97,7 @@ public class Main {
 	}
 }
 
-/* 6_1 メソッドとは
+ 6_1 メソッドとは
 メソッドとは、Javaが持つ特別な機能を呼び出す方法です。
 prinlnメソッドやrandomメソッドのように、便利なメソッドが多数用意されています。
 メソッドの例：
@@ -124,3 +124,23 @@ System.out.println(data) ：dataを引き数として出力する（改行あり
 6_5 戻り値とは
 メソッドの戻り値(もどりち)とは、メソッドの処理結果のデータのことです。返り値と呼ぶ場合もあります。
 Math.random()というメソッドを呼び出すと、0から1の間のランダムな数値が戻り値となります。*/
+
+ /* 7 Chapter07_演算子で計算してみよう
+public class Main {
+	public static void main(String[] args) {
+		int number = 100;
+		System.out.println((5 + 6) * number);
+	}
+}
+
+7_1 基本的な算術演算子
++ 足し算 6 + 2 # 8
+- 引き算 6 - 2 # 4
+* 掛け算 6 * 2 # 12
+/ 割り算 6 / 2 # 3
+% 余り 6 % 4 # 2
+
+7_2 計算の優先順位
+優先順位1 ( )
+優先順位2｜ * / %
+優先順位3 低い + - */

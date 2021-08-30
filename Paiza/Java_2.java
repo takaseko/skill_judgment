@@ -144,3 +144,17 @@ public class Main {
 優先順位1 ( )
 優先順位2｜ * / %
 優先順位3 低い + - */
+
+/* 8 Chapter08_値段を計算してみよう
+オンラインショッピングのように、単価と個数に応じて合計金額を計算するプログラムを作成
+// 値段を計算する
+public class Main {
+	public static void main(String[] args) {
+		int apple_price = (int)(Math.random() * 3 + 1) * 100; //リンゴの単価
+		int apple_num = (int)(Math.random() * 10 + 1); //リンゴを買う数
+		System.out.println("りんごの単価" + apple_price + "円");
+	    System.out.println("りんごを買う数" + apple_num + "個");
+	    int total = apple_price * apple_num;
+	    System.out.println("合計金額" + total + "円");
+	}
+} */

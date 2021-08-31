@@ -158,3 +158,20 @@ public class Main {
 	    System.out.println("合計金額" + total + "円");
 	}
 } */
+
+/*9 Chapter09_データの型を覚えよう 
+// データの種類
+public class Main {
+	public static void main(String[] args) {
+		int number = 100 + 30;	// 数値
+		String text = "ハロー" + "paiza";	// 文字列
+		System.out.println(number); //数値
+		System.out.println(text); //文字列
+		System.out.println(number + text); //文字列（連結データに違っている場合、自動的にデータを変換する）
+		System.out.println(number + 20); //数値
+	}
+}
+
+9_1 種類
+・String型：文字列
+・int型：数値 */

@@ -50,3 +50,41 @@ public class Main {
     }
 }
 ・else ifはいくらでも記述可能*/
+
+/*3 Chapter03_比較演算子で条件分岐してみよう
+// if文による条件分岐 比較演算子
+public class Main {
+	public static void main(String[] args) {
+		int time = 12;
+		if (time < 12) {
+			System.out.println("午前中"); // 条件式が成立したときの処理
+		} else if (time == 12){
+		    System.out.println("正午");
+		} else if (time > 12){
+		    System.out.println("午後");
+		}
+	}
+}
+
+3_1 if -else if 文の基本形
+// if文による条件分岐 else if
+public class Main {
+    public static void main(String[] args) {
+        int number = 1;
+        if (条件式1) {
+            // 条件式1が成立したときの処理
+        } else if (条件式2) {
+            // 条件式2が成立したときの処理
+        } else {
+            // 条件式がどれも成立しなかったときの処理
+        }
+    }
+}
+
+3_2 比較演算子の種類
+利用例	       意味	        真になる例
+a < b	a が b よりも小さい	10 < 15
+a > b	a が b よりも大きい	10 > 7
+a <= b	a が b 以下である	10 <= 15
+a >= b	a が b 以上である	10 >= 7
+a != b	a と b が等しくない	10 != 1 */

@@ -88,3 +88,42 @@ a > b	a が b よりも大きい	10 > 7
 a <= b	a が b 以下である	10 <= 15
 a >= b	a が b 以上である	10 >= 7
 a != b	a と b が等しくない	10 != 1 */
+
+/* Chapter04_おみくじを作ってみよう
+// おみくじを作る
+// 比較演算子  ==  >  <   >=  <=  !=
+// 大吉  中吉  小吉  凶  大凶
+public class Main {
+	public static void main(String[] args) {
+        int omikuji = (int)(Math.random() * 10 +1);
+        //System.out.println(omikuji);
+        if (omikuji == 1) {
+            System.out.println("大吉");
+        } else if (omikuji == 2) {
+            System.out.println("中吉");
+        } else if (omikuji <= 4) {
+            System.out.println("小吉"); //3,4
+        } else if (omikuji <= 7) {
+            System.out.println("凶"); //5,6,7
+        } else {
+            System.out.println("大凶");
+        }
+	}
+}
+
+4_1 if -else if 文の基本形
+if文による条件分岐 else if
+public class Main {
+    public static void main(String[] args) {
+        int number = 1;
+        if (条件式1) {
+            // 条件式1が成立したときの処理
+        } else if (条件式2) {
+            // 条件式2が成立したときの処理
+        } else {
+            // 条件式がどれも成立しなかったときの処理
+        }
+    }
+}
+4_2 デバッグとは
+・プログラムを修正、動作確認をすること */

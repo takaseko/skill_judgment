@@ -1,7 +1,7 @@
 ## skill_judgment
 
 ## 内容
-html_SQL_javaの技術向上
+html_SQL_java技術向上
 
 ## 開発環境
 - ローカル
@@ -39,8 +39,9 @@ html_SQL_javaの技術向上
 - Streamが一通り利用できる（fileter, anyMatch , findFirestなど）
 - O/R マッパーを利用してのコーディングができる（MyBatis, hibernateなど）
 
-### Paiza
+### Pz
 - Java1
 - Java入門編
 - 問題集
-- スキルチェックD
+- D
+- C

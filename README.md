@@ -39,6 +39,8 @@ html_SQL_java技術向上
 - Streamが一通り利用できる（fileter, anyMatch , findFirestなど）
 - O/R マッパーを利用してのコーディングができる（MyBatis, hibernateなど）
 
+### JavaScript
+
 ### Pz
 - Java1
 - Java入門編

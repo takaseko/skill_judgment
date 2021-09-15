@@ -41,6 +41,7 @@ html_SQL_java技術向上
 
 ### JavaScript
 - D
+- C
 
 ### Pz
 - Java1

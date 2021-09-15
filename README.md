@@ -40,6 +40,7 @@ html_SQL_java技術向上
 - O/R マッパーを利用してのコーディングができる（MyBatis, hibernateなど）
 
 ### JavaScript
+- D
 
 ### Pz
 - Java1

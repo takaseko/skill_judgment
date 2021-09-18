@@ -1,0 +1,81 @@
+{
+  // IntelliSense を使用して利用可能な属性を学べます。
+  // 既存の属性の説明をホバーして表示します。
+  // 詳細情報は次を確認してください: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Launch C024",
+      "request": "launch",
+      "mainClass": "C024",
+      "projectName": "skill_judgment_eae29c09"
+    },
+    {
+      "type": "java",
+      "name": "Launch D014",
+      "request": "launch",
+      "mainClass": "D014",
+      "projectName": "skill_judgment_eae29c09"
+    },
+    {
+      "type": "java",
+      "name": "Launch C020",
+      "request": "launch",
+      "mainClass": "C020",
+      "projectName": "skill_judgment_eae29c09"
+    },
+    {
+      "type": "java",
+      "name": "Launch D102",
+      "request": "launch",
+      "mainClass": "D102",
+      "projectName": "skill_judgment_eae29c09"
+    },
+    {
+      "type": "java",
+      "name": "Launch C023",
+      "request": "launch",
+      "mainClass": "C023",
+      "projectName": "skill_judgment_eae29c09"
+    },
+    {
+      "type": "java",
+      "name": "Launch C055",
+      "request": "launch",
+      "mainClass": "C055",
+      "projectName": "skill_judgment_eae29c09"
+    },
+    {
+      "type": "java",
+      "name": "Launch Current File",
+      "request": "launch",
+      "mainClass": "${file}"
+    },
+    {
+      "type": "java",
+      "name": "Launch task1",
+      "request": "launch",
+      "mainClass": "task1",
+      "projectName": "skill_judgment_eae29c09"
+    },
+    {
+      "type": "java",
+      "name": "Launch ArrayListSample",
+      "request": "launch",
+      "mainClass": "com.javalearning.ArrayListSample"
+    },
+    {
+      "type": "java",
+      "name": "Launch ArraySample",
+      "request": "launch",
+      "mainClass": "com.javalearning.ArraySample"
+    },
+    {
+      "type": "java",
+      "name": "Launch MapSample",
+      "request": "launch",
+      "mainClass": "com.javalearning.MapSample"
+    }
+  ]
+}

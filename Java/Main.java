@@ -54,7 +54,7 @@
 // ・上記コードでは外部ファイルのSampleClass.javaに記述してあるSampleClassをMain.javaでインスタンス化し、クラス内メソッドである”SampleMethod”を呼び出している
 // （例：staticを使った呼び出し方）
 // ・static修飾子を使うことでインスタンスを生成することなくメンバ変数やメソッドの呼び出しが出来るようになる
-//Main.java
+// Main.java
 // public class Main {
  
 // 	public static void main(String[] args) {

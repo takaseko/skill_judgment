@@ -1,6 +1,4 @@
 import java.util.Scanner;
-
-// - D012 
 public class D014 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in); // Scannerクラスのインスタンスを作成、引数で標準入力System.inを指定

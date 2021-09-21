@@ -1,4 +1,3 @@
-// package com.paiza.paiza_c;
 // import java.util.ArrayList;
 // import java.util.List;
 // import java.util.Scanner;

@@ -1,3 +1,4 @@
+// package D;
 // import java.util.Scanner;
 
 // public class D106 {

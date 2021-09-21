@@ -1,4 +1,4 @@
-/* 参照：Piazaラーニング
+/* 参照：Paizaラーニング
 Java入門編1：プログラミングを学ぶ
 
 1 chapter01_Javaとは？

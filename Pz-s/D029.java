@@ -1,14 +1,13 @@
-import java.util.*;
+// import java.util.Scanner;
 
-public class D029 {
-    public static void main(String[] args) {
-        // 自分の得意な言語で
-        // Let's チャレンジ！！
-        int n = (int)(Math.random() * 6 +1);
-        if (1 <= n <= 6) {
-            System.out.println(n);
-        }
-    }
-}
+// public class D029 {
+//   public static void main(String[] args) {
+//     Scanner sc = new Scanner(System.in); // Scannerクラスのインスタンスを作成、引数で標準入力System.inを指定
+//     int n = sc.nextInt(); //nextInt()メソッドで文字列ではなく数値として取得する
+//     sc.nextLine();  //nextLine()メソッドで入力した値を1行読み取り
 
-// 上位間違っている
+//     for (int i = 0; i < 1; i++) {
+//       System.out.println(7 - n);  //サイコロの裏面の結果を出力
+//     }    
+//   }
+// }

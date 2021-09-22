@@ -6,6 +6,34 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Launch C056",
+      "request": "launch",
+      "mainClass": "C.C056",
+      "projectName": "skill_judgment_eae29c09"
+    },
+    {
+      "type": "java",
+      "name": "Launch C075",
+      "request": "launch",
+      "mainClass": "C.C075",
+      "projectName": "skill_judgment_eae29c09"
+    },
+    {
+      "type": "java",
+      "name": "Launch C017",
+      "request": "launch",
+      "mainClass": "C.C017",
+      "projectName": "skill_judgment_eae29c09"
+    },
+    {
+      "type": "java",
+      "name": "Launch D156",
+      "request": "launch",
+      "mainClass": "D.D156",
+      "projectName": "skill_judgment_eae29c09"
+    },
+    {
+      "type": "java",
       "name": "Launch D166",
       "request": "launch",
       "mainClass": "D166",

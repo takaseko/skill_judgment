@@ -1,3 +1,5 @@
+// package C;
+
 // import java.util.List;
 // import java.util.ArrayList;
 // import java.util.*;
@@ -19,6 +21,8 @@
 //               tmpList.add(Integer.parseInt(array[0])); // テストの点数
 //               tmpList.add(Integer.parseInt(array[1])); // 欠席回数
 //               list.add(tmpList);
+
+//             //  System.out.println(tmpList);
 //           }
           
 //           // 結果の出力
@@ -41,7 +45,7 @@
 //       }
 // }
 
-// // C056_2 List<Data>みたいな形でclassに格納された状態で処理する方法
+// C056_2 List<Data>みたいな形でclassに格納された状態で処理する方法
 
 // package com.paiza.paiza_c;
 // ​

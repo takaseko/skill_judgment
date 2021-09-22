@@ -34,15 +34,15 @@
 //             }
 //         }
 
-//         if (sum - num == 0) {
-//             // 自身を除いたものの和 - 与えられた整数 = 0 の場合
-//             System.out.println("perfect");
-//         } else if (sum - num == -1) {
-//             // 自身を除いたものの和 - 与えられた整数 = -1 の場合
-//             System.out.println("nearly");
-//         } else {
-//             // それ以外
-//             System.out.println("neither");
-//         }
+        // if (sum - num == 0) {
+        //     // 自身を除いたものの和 - 与えられた整数 = 0 の場合
+        //     System.out.println("perfect");
+        // } else if (sum - num == -1) {
+        //     // 自身を除いたものの和 - 与えられた整数 = -1 の場合
+        //     System.out.println("nearly");
+        // } else {
+        //     // それ以外
+        //     System.out.println("neither");
+        // }
 //     }
 // }

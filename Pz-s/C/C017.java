@@ -1,52 +1,52 @@
-// package C;
-// import java.util.ArrayList;
-// import java.util.List;
-// import java.util.Scanner;
+package C;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
-// public class C017 {
-//     public static void main(String[] args) {
-//         Scanner sc = new Scanner(System.in);
-//         //まず以下で入力受付
-//         int a = sc.nextInt(); // 親カード1 nextLineメソッドで1行分の入力を取得し変数へ代入
-//         int b = sc.nextInt(); // 親カード2
-//         sc.nextLine(); // 改行
-//         int n = sc.nextInt(); // 整数n（子カードの枚数）
-//         sc.nextLine(); // 改行
-//         //System.out.println();親カード、整数nの入力受付確認OK
+public class C017 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        //まず以下で入力受付
+        int a = sc.nextInt(); // 親カード1 nextLineメソッドで1行分の入力を取得し変数へ代入
+        int b = sc.nextInt(); // 親カード2
+        sc.nextLine(); // 改行
+        int n = sc.nextInt(); // 整数n（子カードの枚数）
+        sc.nextLine(); // 改行
+        System.out.println(); // 親カード、整数nの入力受付確認OK
 
-//         List<List<Integer>> list = new ArrayList<>(); // 入力を一時的に保持するList
-//             // 子カードを枚数だけ処理を繰り返す。
-//             for (int i = 0; i < n; i++) {
-//                 String[] array = sc.nextLine().split(" "); // 入力例: 7 2 → {"7", "2"}に変換
-//                 // 配列の中身はString型なので、intに変換してListに格納する。
-//                 List<Integer> tmpList = new ArrayList<>(); 
-//                 tmpList.add(Integer.parseInt(array[0])); // 子カード1つ目の番号
-//                 tmpList.add(Integer.parseInt(array[1])); // 子カード2つ目の番号
-//                 list.add(tmpList);
-//                 // System.out.println(); 子カードの格納確認OK
-//             }
+        List<List<Integer>> list = new ArrayList<>(); // 入力を一時的に保持するList
+            // 子カードを枚数だけ処理を繰り返す。
+            for (int i = 0; i < n; i++) {
+                String[] array = sc.nextLine().split(" "); // 入力例: 7 2 → {"7", "2"}に変換
+                // 配列の中身はString型なので、intに変換してListに格納する。
+                List<Integer> tmpList = new ArrayList<>(); 
+                tmpList.add(Integer.parseInt(array[0])); // 子カード1つ目の番号
+                tmpList.add(Integer.parseInt(array[1])); // 子カード2つ目の番号
+                list.add(tmpList);
+                System.out.println(); // 子カードの格納確認OK
+            }
         
-//             // 結果の出力（山岡さん）
-//             // 入力を一時的に保持するList全件に対して処理を繰り返す。
-//             for (List<Integer> integerList : list) {
-//                 if (a > integerList.get(0)) { // 1つ目の番号で親カードが大きい場合
-//                     System.out.println("High");
-//                 }
+            // 結果の出力（山岡さん）
+            // 入力を一時的に保持するList全件に対して処理を繰り返す。
+            for (List<Integer> integerList : list) {
+                if (a > integerList.get(0)) { // 1つ目の番号で親カードが大きい場合
+                    System.out.println("High");
+                }
 
-//                 if (a < integerList.get(0)) { // 1つ目の番号で親カードが小さい場合
-//                     System.out.println("Low");
-//                 }
+                if (a < integerList.get(0)) { // 1つ目の番号で親カードが小さい場合
+                    System.out.println("Low");
+                }
                 
-//                 if (a == integerList.get(0)) { // 1つ目の番号で親カードと同じで、2つ目の番号で親カードが大きい場合と小さい場合
-//                     if (b < integerList.get(1)) {
-//                         System.out.println("High");
-//                     } else {
-//                         System.out.println("Low");
-//                     }
-//                 }
-//             }
-//     }
-// }
+                if (a == integerList.get(0)) { // 1つ目の番号で親カードと同じで、2つ目の番号で親カードが大きい場合と小さい場合
+                    if (b < integerList.get(1)) {
+                        System.out.println("High");
+                    } else {
+                        System.out.println("Low");
+                    }
+                }
+            }
+    }
+}
 
                 // // 結果の出力（高瀬）
                 // // 入力を一時的に保持するList全件に対して処理を繰り返す。

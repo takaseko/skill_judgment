@@ -20,7 +20,7 @@ public class C023 {
         list.add(Arrays.asList(array)); //配列をリストへ変換したものをadd（追加）する
       }
 
-      System.out.println(list);
+      System.out.println(winNumList);
 
       for (List<String> list2 : list) {
         int count = 0;

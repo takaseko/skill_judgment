@@ -1,51 +1,53 @@
-// import java.util.List;
-// import java.util.ArrayList;
-// import java.util.*;
-// import java.util.Scanner;
+package C;
 
-// public class C024 {
-//   public static void main(String[] args) {
-//     Scanner sc = new Scanner(System.in);
-//     int n  = sc.nextInt(); // 1行目：命令の個数 
-//     sc.nextLine();
+import java.util.List;
+import java.util.ArrayList;
+import java.util.*;
+import java.util.Scanner;
 
-//     List<List<String>> list = new ArrayList<>(); // 与えられた文字列のリスト
-//     for (int i = 0; i < n; i++) {
-//       String str = sc.nextLine();
-//       String array[] = str.split(" ");
-//       list.add(Arrays.asList(array)); //配列をリストへ変換したものをadd（追加）する
-//     }
+public class C024 {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int n  = sc.nextInt(); // 1行目：命令の個数 
+    sc.nextLine();
 
-//     // System.out.println(list);
+    List<List<String>> list = new ArrayList<>(); // 与えられた文字列のリスト
+    for (int i = 0; i < n; i++) {
+      String str = sc.nextLine();
+      String array[] = str.split(" ");
+      list.add(Arrays.asList(array)); //配列をリストへ変換したものをadd（追加）する
+    }
 
-//     // 変数1,2を初期化
-//     int val1 = 0;
-//     int val2 = 0;
-//     // 与えられた入力全件に対して以下の処理をする 例)[[SET, 1, 10], [SET, 2, 20], [ADD, 40]]
-//     for (List<String> list2 : list) {
-//         // 文字列がSETの場合
-//         if ("SET".equals(list2.get(0))) {
-//             // 1の場合
-//             if ("1".equals(list2.get(1))) {
-//               val1 = Integer.parseInt(list2.get(2));// 変数1に値を代入する
-//             }
-//             // 2の場合
-//             if ("2".equals(list2.get(1))) {
-//               val2 = Integer.parseInt(list2.get(2));// 変数2に値を代入する
-//             }
-//         }
-//         // 文字列がADDの場合
-//         if ("ADD".equals(list2.get(0))) {
-//           val2 = val1 + Integer.parseInt(list2.get(1)); // 「変数 1 の値 + a」を計算し、計算結果を変数 2 に代入する
-//         }
-//         // 文字列がSUBの場合
-//         if ("SUB".equals(list2.get(0))) {
-//           val2 = val1 - Integer.parseInt(list2.get(1));// 「変数 1 の値 - a」を計算し、計算結果を変数 2 に代入する
-//         }
-//     }
-//     System.out.println(val1 + " " + val2);
-//   }
-// }
+    // System.out.println(list);
+
+    // 変数1,2を初期化
+    int val1 = 0;
+    int val2 = 0;
+    // 与えられた入力全件に対して以下の処理をする 例)[[SET, 1, 10], [SET, 2, 20], [ADD, 40]]
+    for (List<String> list2 : list) {
+        // 文字列がSETの場合
+        if ("SET".equals(list2.get(0))) {
+            // 1の場合
+            if ("1".equals(list2.get(1))) {
+              val1 = Integer.parseInt(list2.get(2));// 変数1に値を代入する
+            }
+            // 2の場合
+            if ("2".equals(list2.get(1))) {
+              val2 = Integer.parseInt(list2.get(2));// 変数2に値を代入する
+            }
+        }
+        // 文字列がADDの場合
+        if ("ADD".equals(list2.get(0))) {
+          val2 = val1 + Integer.parseInt(list2.get(1)); // 「変数 1 の値 + a」を計算し、計算結果を変数 2 に代入する
+        }
+        // 文字列がSUBの場合
+        if ("SUB".equals(list2.get(0))) {
+          val2 = val1 - Integer.parseInt(list2.get(1));// 「変数 1 の値 - a」を計算し、計算結果を変数 2 に代入する
+        }
+    }
+    System.out.println(val1 + " " + val2);
+  }
+}
 
 //          // 高瀬記述
 // //       Scanner sc = new Scanner(System.in);

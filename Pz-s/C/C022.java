@@ -27,13 +27,50 @@ public class C022 {
               //System.out.println(tmpList); // 結果の格納確認OK
           }
 
-          // 結果の出力
+        // 結果の出力
+        // 入力を一時的に保持するList全件に対して処理を繰り返す。
+        int startPrice = 0; // 始値
+        int endPrice = 0; // 終値
+        int highestPrice = Integer.MIN_VALUE; // 高値
+        int lowestPrice = Integer.MAX_VALUE; // 安値
+
+        for (int i = 0; i < list.size(); i++) {
+            int firstPrice = list.get(i).get(0); // 株価（1番目の値）始値
+            int secondPrice = list.get(i).get(1); // 株価（2番目の値）終値
+            int thirdPrice = list.get(i).get(2); // 株価（3番目の値）高値
+            int fourthPrice = list.get(i).get(3); // 株価（4番目の値）安値
+
+            // 1回目のループの場合
+            if (i == 0) {
+                // 始値を更新する
+                startPrice = firstPrice;
+            }
+
+            // 最後のループの場合
+            if (i == list.size() - 1) {
+                // 終値を更新する
+                endPrice = secondPrice;
+            }
+
+            // 高値
+            if (highestPrice < thirdPrice) {
+                highestPrice = thirdPrice;
+            }
+
+            // 安値
+            if (fourthPrice < lowestPrice) {
+                lowestPrice = fourthPrice;
+            }
+        }
+        System.out.println(startPrice + " " + endPrice + " " + highestPrice + " " + lowestPrice);
+
+          // 結果の出力（高瀬）
           // 入力を一時的に保持するList全件に対して処理を繰り返す。
-          for (int i = 0; i < list.size(); i++) {
-              int firstPrice = list.get(i).get(0); // 株価（1番目の値）
-              int secondPrice = list.get(i).get(1); // 株価（2番目の値）
-              int thirdPrice = list.get(i).get(2); // 株価（3番目の値）
-              int fourthPrice = list.get(i).get(3); // 株価（4番目の値）
+        //   for (int i = 0; i < list.size(); i++) {
+        //       int firstPrice = list.get(i).get(0); // 株価（1番目の値）
+        //       int secondPrice = list.get(i).get(1); // 株価（2番目の値）
+        //       int thirdPrice = list.get(i).get(2); // 株価（3番目の値）
+        //       int fourthPrice = list.get(i).get(3); // 株価（4番目の値）
 
               // // 株価（始値）を出力
               // if (Arrays.asList(firstPrice).contains()) {
@@ -51,6 +88,6 @@ public class C022 {
               // if () { //条件の検討がつかない
               //   System.out.println(Collections.min(list));
               // }
-          }
+        //   }
   }
 }

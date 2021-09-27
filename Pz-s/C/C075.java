@@ -15,7 +15,7 @@ public class C075 {
     int m = sc.nextInt(); // 乗車回数
     sc.nextLine();
 
-    System.out.println(m);
+    // System.out.println(m);
     
     // 与えられた入力(運賃)をリストList<Integer>に格納する
     List<Integer> givenNumList = new ArrayList<>();

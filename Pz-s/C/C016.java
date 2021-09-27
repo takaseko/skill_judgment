@@ -8,8 +8,8 @@ import java.util.Scanner;
 public class C016 {
     public static void main(String[] args) {
        Scanner sc = new Scanner(System.in);
-       String[] line = sc.nextLine().split("");​
-        // Map
+       String[] line = sc.nextLine().split("");
+       // Map
        Map<String, String> map = new HashMap<>();
        map.put("A", "4");
        map.put("E", "3");

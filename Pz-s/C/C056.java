@@ -18,7 +18,7 @@ public class C056 {
               String[] array = sc.nextLine().split(" "); // 入力例: 80 11 → {"80", "11"}に変換
               // 配列の中身はString型なので、intに変換してListに格納する。
               List<Integer> tmpList = new ArrayList<>(); 
-              tmpList.add(Integer.parseInt(array[0])); // 
+              tmpList.add(Integer.parseInt(array[0])); // テストの点数
               tmpList.add(Integer.parseInt(array[1])); // 欠席回数
               list.add(tmpList);
 

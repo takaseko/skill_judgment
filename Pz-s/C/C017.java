@@ -28,7 +28,7 @@ public class C017 {
                 System.out.println(); // 子カードの格納確認OK
             }
         
-            // 結果の出力（山岡さん）
+            // 結果の出力
             // 入力を一時的に保持するList全件に対して処理を繰り返す。
             for (List<Integer> integerList : list) {
                 if (a > integerList.get(0)) { // 1つ目の番号で親カードが大きい場合

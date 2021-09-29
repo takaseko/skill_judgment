@@ -1,14 +1,16 @@
 package D;
 import java.util.Scanner;
 
-public class D031 {
+public class D067 {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in); // Scannerクラスのインスタンスを作成、引数で標準入力System.inを指定
-    int n = sc.nextInt(); //nextInt()メソッドで文字列ではなく数値として取得する
+    int n = sc.nextInt(); //数値として取得
     sc.nextLine();  //nextLine()メソッドで入力した値を1行読み取り
 
-    for (int i = 0; i < 1; i++) {
-      System.out.println(n * 60);  //分から秒へ変換した結果を出力
-    }    
+      if (n % 2 == 0) {
+        System.out.println("OFF");
+      } else {
+        System.out.println("ON");  //結果を出力 
+      }
   }
 }

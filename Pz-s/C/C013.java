@@ -38,7 +38,6 @@ public class C013 {
           if (count == 0) {
               System.out.println("none");
           }
-
   }
 }
     

@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Launch C097",
+      "request": "launch",
+      "mainClass": "C.C097",
+      "projectName": "skill_judgment_eae29c09"
+    },
+    {
+      "type": "java",
       "name": "Launch C010",
       "request": "launch",
       "mainClass": "C.C010",

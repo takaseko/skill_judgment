@@ -28,9 +28,6 @@ public class C097 {
   }
 }
 
-
-
-
         // List<List<Integer>> list = new ArrayList<>(); // 入力を一時的に保持するList
         // // 木陰の数だけ処理を繰り返す。
         // for (int i = 0; i < N; i++) {

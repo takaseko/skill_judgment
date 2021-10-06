@@ -7,8 +7,6 @@ import java.util.Scanner;
 
 public class C075 {
   public static void main(String[] args) {
-    // 自分の得意な言語で
-    // Let's チャレンジ！！
     Scanner sc = new Scanner(System.in);
     // 1行目の入力を変数に代入する。
     int n = sc.nextInt(); // 残高

@@ -9,7 +9,6 @@ public class C093 {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     String[] array = sc.nextLine().split(" ");
-    System.out.println();
 
     int bob = getResult(array[0].split(""));
     int alice = getResult(array[1].split(""));
@@ -21,7 +20,6 @@ public class C093 {
     } else {
         System.out.println("Draw");
     }
-    System.out.println();
   }
 
   public static int getResult(String[] array) {
@@ -31,7 +29,6 @@ public class C093 {
       } else {
           sum = Integer.parseInt(array[0]);
       }
-      System.out.println();
 
       String sumStr = String.valueOf(sum);
       if (sumStr.length() == 1) {

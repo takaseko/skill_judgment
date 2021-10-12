@@ -15,29 +15,37 @@ public class C074 {
         int W = sc.nextInt(); // 横幅（変更前）
         int X = sc.nextInt(); // 横幅（変更後）
         sc.nextLine(); // 改行
-        System.out.println(); // 受付確認
+        // System.out.println(); // 受付確認
 
-        List<List<String>> list = new ArrayList<>(); // 与えられた文字列のリスト
+        // 与えられた文字列のリスト
+        List<String> strList = new ArrayList<>();
         for (int i = 0; i < H; i++) {
-          String str = sc.nextLine();
-          String array[] = str.split(" ");
-          list.add(Arrays.asList(array)); //配列をリストへ変換したものをadd（追加）する
+            String[] input = sc.nextLine().split("");
+            List<String> tmpList = new ArrayList<>(Arrays.asList(input)); //配列をリストへ変換したものをadd（追加）する
+            strList.addAll(tmpList); // リストへ格納した複数行の文字列を、1つの文字列へ変換
+            // System.out.println(strList); リストの確認
         }
-        // System.out.println(list); // 文字列の確認
 
-        
-        
-        // while (ite.hasNext()) {
-        //     if (vowels.contains(ite.next())) {
-        //         ite.remove();
-        //     }
-        // }
-        // // ↑strList.removeIf(vowels::contains); に書き換え可能
-        
-        // // 母音を覗いた文字列の出力
-        // for (String str : strList) {
-        //     System.out.print(str);
-        // }
-
+        // 変更後の横幅(X)で繰り返し改行されて結果を表示
+        int count = 0;
+        for (String s : strList) {
+            System.out.print(s);
+            count++;
+            if (count == X) {
+                System.out.println();
+                count = 0;
+            }
+        }
     }
 }
+
+        // 自分
+        // List<List<String>> list = new ArrayList<>(); // 与えられた文字列のリスト
+        // for (int i = 0; i < H; i++) {
+        //   String str = sc.nextLine();
+        //   String array[] = str.split(" ");
+        //   list.add(Arrays.asList(array)); //配列をリストへ変換したものをadd（追加）する
+        // }
+        // System.out.println(list); // 文字列の確認
+//     }
+// }

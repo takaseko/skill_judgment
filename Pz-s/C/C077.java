@@ -53,7 +53,8 @@ public class C077 {
                 System.out.println("D");
             }
           }
-
+    }
+}
         //   // 結果の出力（高瀬）
         //   // 入力を一時的に保持するList全件に対して処理を繰り返す。
         //   for (int i = 0; i < list.size(); i++) {
@@ -82,5 +83,3 @@ public class C077 {
         //         System.out.println("D");
         //       }
         //   }
-    }
-}

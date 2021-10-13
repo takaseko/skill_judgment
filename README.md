@@ -50,5 +50,4 @@ html_SQL_java技術向上
 - C
 
 - JavaScript
-- JavaScript1
 - D
